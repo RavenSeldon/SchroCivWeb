@@ -60,21 +60,42 @@ ssh -t neurascape 'cd /var/www/Neurascape/WebDev/Blog && git pull && sudo system
 
 Put your original files in one folder, then set `SOURCE` to it:
 
+Keep **one** folder holding every track you want, in the order you want them.
+This rebuilds `src/assets/audio/` from it each time, so adding, removing and
+reordering all work by editing that one folder and re-running.
+
 ```bash
 brew list ffmpeg >/dev/null 2>&1 || brew install ffmpeg
-SOURCE=~/Music/tale-originals          # <-- change this to your folder
+SOURCE=~/Music/tale-originals          # <-- every track, not just the new ones
+
+# Refuse to run unless SOURCE is set and actually holds files. Without this an
+# unset SOURCE expands to /* and ffmpeg walks your whole disk -- after the
+# delete below has already emptied the folder.
+[ -n "$SOURCE" ] && [ -d "$SOURCE" ] && [ -n "$(ls -A "$SOURCE" 2>/dev/null)" ] || {
+  echo "STOP: SOURCE is unset, missing, or empty -- nothing was changed."; return 2>/dev/null || exit 1; }
 
 cd ~/Root/transmission_live/src/assets/audio
+find . -maxdepth 1 -name '*.m4a' -delete      # rebuilt from SOURCE below
 n=1
 for f in "$SOURCE"/*; do
+  case "$f" in *.md|*.txt|*/.*) continue;; esac
   name=$(basename "${f%.*}" | tr '[:upper:] ' '[:lower:]_' | tr -cd 'a-z0-9._-')
-  ffmpeg -loglevel error -i "$f" -vn -c:a aac -b:a 64k -ar 44100 \
+  ffmpeg -y -loglevel error -i "$f" -vn -c:a aac -b:a 64k -ar 44100 \
          -af "lowpass=f=15000" -movflags +faststart \
-         "$(printf '%02d' $n)_${name}.m4a"
-  n=$((n+1))
+         "$(printf '%02d' $n)_${name}.m4a" && n=$((n+1))
 done
 ls -lh
 ```
+
+Why it deletes first: the build plays whatever is in this folder, sorted by
+filename. Converting only the *new* songs restarts numbering at `01` and
+interleaves them with the old ones, and a track removed from `SOURCE` would
+otherwise linger here and keep playing. Rebuilding from `SOURCE` every time
+makes the folder always match it.
+
+`-y` lets a re-run overwrite silently; without it ffmpeg stops to ask.
+`&& n=$((n+1))` means a file that fails to convert doesn't consume a number and
+leave a gap in the order.
 
 `-vn` drops any video stream. Music files often carry one — a music video, or
 artwork encoded as video — and an `.m4a` container refuses it, so without that
@@ -83,7 +104,22 @@ flag ffmpeg writes nothing at all.
 **Should say:** five `.m4a` files named `01_…` to `05_…`, a couple of MB each.
 They play in that number order, then start again from `01`.
 
-To change the order, rename the number prefixes.
+To change the order, renumber the files in `SOURCE` and re-run.
+
+**To slot one track between two existing ones**, give it the number it follows
+plus a letter — `04a_…` goes after `04_…` and before `05_…`. Sorting is
+locale-aware and ignores `-` and `_`, so `04_04-lament` compares as
+`0404lament`: a plain `04_a-good` would sort *before* it, not after. The letter
+must ride on the number (`04a_`), not on the title. Renumbering everything
+through `SOURCE` is still the cleaner move when you're adding more than one.
+
+**You can also skip this step entirely.** The build accepts any `.mp3`, `.m4a`,
+`.aac` or `.ogg` whose name uses only letters, digits, dots, dashes and
+underscores — so an already-small, already-tidily-named file can be dropped
+straight into `src/assets/audio/`. The conversion exists only to change format,
+strip video, shrink the file and clean the name. Note that a `.wav` or `.flac`
+dropped in is **ignored without warning**: it isn't an accepted extension, and
+the build only warns about accepted extensions with unusable names.
 
 ---
 
