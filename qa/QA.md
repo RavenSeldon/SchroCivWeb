@@ -1,4 +1,4 @@
-[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/shrodingers_civ.git)
+[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/schrodingers_civ.git)
 
 # Website verification record
 
@@ -50,7 +50,7 @@ The original dossier table initially overflowed the phone layout; all source tab
 - Chromium emulation is not testing on physical phones, iOS Safari, Firefox, OS text scaling or a screen reader. Native browser-menu 200% zoom was not driven; CSS zoom and the halved effective viewport were tested and are identified as such. The CSS-zoom screenshot preserves the desktop media-query layout and is not evidence of native browser zoom behavior.
 - The initial sandbox blocked the localhost listener and Chromium's macOS Mach-port startup. Approved local execution outside that sandbox enabled all reported browser checks. No sandbox failure is counted as a passing test.
 - The existing `www.benamuwo.me` hosting configuration, TLS, Nginx integration and public-network performance were not inspected or tested. The supplied scoped configuration is an operator-reviewed deployment example. No DNS or server changes were made.
-- Source-paper disagreements and retained draft-era text are listed in `docs/CONTENT-ISSUES.md`. The interface does not turn those into new research claims.
+- Source-paper disagreements are listed in `docs/CONTENT-ISSUES.md`, which also records the draft-era text the Author has since resolved. The interface does not turn those into new research claims.
 
 ## Reproduction
 

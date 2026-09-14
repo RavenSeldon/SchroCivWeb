@@ -1,4 +1,4 @@
-[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/shrodingers_civ.git)
+[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/schrodingers_civ.git)
 
 # Optional Flask wiring: url.py and views.py
 
@@ -6,7 +6,7 @@ These are **instructions and example files only**. Nothing has been added to the
 
 ## What exists today
 
-Read-only inspection confirmed the `beamu-blog` remote and the Flask app at `/Users/theda/PycharmProjects/PythonProject/WebDev/Blog/`. Its entry point is `gunicorn wsgi:app`. Blueprints are registered inside `register_blueprints(app)` in `app/routes/__init__.py`. No existing `url.py` or `views.py` files were found in the app; this is Flask blueprint routing, not a Django URL configuration.
+Read-only inspection confirmed the `beamu-blog` remote and the Flask app under `WebDev/Blog/` in that checkout. Its entry point is `gunicorn wsgi:app`. Blueprints are registered inside `register_blueprints(app)` in `app/routes/__init__.py`. No existing `url.py` or `views.py` files were found in the app; this is Flask blueprint routing, not a Django URL configuration.
 
 To use the names you requested without rewriting existing modules, the supplied examples form a **new, isolated blueprint**:
 

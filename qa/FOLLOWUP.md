@@ -1,4 +1,4 @@
-[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/shrodingers_civ.git)
+[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/schrodingers_civ.git)
 
 # Scoped follow-up: seal, favicon and Flask integration instructions
 

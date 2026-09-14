@@ -2,6 +2,14 @@
   "name": "schrodingers-civilization",
   "version": "1.0.0",
   "private": true,
+  "description": "Static research publication site for Schr\u00f6dinger's Civilization: the Minded-Language Audit, the Claim Transmission Atlas, and The Translator's Tale.",
+  "author": "Benjamin Amuwo",
+  "license": "MIT",
+  "homepage": "https://www.benamuwo.me/schrodingers_civ/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RavenSeldon/SchroCivWeb.git"
+  },
   "type": "module",
   "engines": {
     "node": ">=22"

@@ -1,9 +1,9 @@
 {
   "htmlDocuments": 32,
   "routes": 31,
-  "localLinksChecked": 1857,
-  "assetHashesChecked": 46,
+  "localLinksChecked": 1887,
+  "assetHashesChecked": 48,
   "chapters": 23,
-  "totalBytes": 4248278,
+  "totalBytes": 4402000,
   "checks": "All local links, fragment targets, base paths, image references, publication URLs, chapter assets, one-h1 structure and asset hashes passed."
 }

@@ -2,13 +2,16 @@
 Normal website builds need only Node and the versioned src/ directory.
 """
 from pathlib import Path
-import csv, hashlib, io, json, re, shutil, unicodedata
+import csv, hashlib, io, json, os, re, shutil, unicodedata
 import pdfplumber
 from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
-RESEARCH=Path('/Users/theda/Root/transmission')
+# Supplied input locations. Override with RESEARCH_ROOT / DOSSIER_HTML; the
+# defaults assume the research checkout and dossier sit beside this repository.
+RESEARCH=Path(os.environ.get('RESEARCH_ROOT','../transmission')).expanduser()
+DOSSIER=Path(os.environ.get('DOSSIER_HTML','../Minded_Language_Audit_Dossier.html')).expanduser()
 BASE='https://www.benamuwo.me/schrodingers_civ/'
 GITHUB='https://github.com/RavenSeldon/shrodingers_civ.git'
 HEADER=f'[Project website]({BASE}) · [Research repository]({GITHUB})\n\n'
@@ -19,7 +22,7 @@ def copy(p,dest,role):
  dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,dest);record(p,dest,role)
 for p in (RESEARCH/'submission/tables').glob('*.csv'):copy(p,ROOT/'src/assets/tables'/p.name,'Frozen source table; no recalculation')
 copy(RESEARCH/'submission/assets/claim_transmission_atlas.svg',ROOT/'src/assets/figures/atlas.svg','87-tree expanded legibility vector, disclosure chronology corrected; unmodified')
-raw=Path('/Users/theda/Downloads/Apart Research Sprint/Minded_Language_Audit_Dossier.html').read_text()
+raw=DOSSIER.read_text()
 svgs=re.findall(r'<svg\b.*?</svg>',raw,re.S)
 for i,s in enumerate(svgs):
  (ROOT/f'src/assets/figures/audit-{i+1}.svg').write_text(s)
@@ -28,7 +31,7 @@ body=raw[raw.index('<header>'):raw.index('<!-- =============================== D
 for i,s in enumerate(svgs):body=body.replace(s,f'<img src="@@BASE@@assets/figures/audit-{i+1}.svg" alt="Audit figure {i+1}; description and interpretation in the adjacent caption" loading="lazy">')
 body=re.sub(r'<!--.*?-->','',body,flags=re.S)
 (ROOT/'src/content/dossier.html').write_text(body)
-record(Path('/Users/theda/Downloads/Apart Research Sprint/Minded_Language_Audit_Dossier.html'),ROOT/'src/content/dossier.html','Guided dossier; SVGs externalized; stale PDF script and download notes omitted')
+record(DOSSIER,ROOT/'src/content/dossier.html','Guided dossier; SVGs externalized; stale PDF script and download notes omitted')
 copy(ROOT/'handoff/TRANSLATOR_STORY.md',ROOT/'src/content/tale-source.md','Original narrative with chat citation markers already removed')
 rows=list(csv.DictReader(open(ROOT/'handoff/STORY_IMAGE_MANIFEST.csv')))
 expected={r['image_stem'] for r in rows}; files=list((ROOT/'handoff/gallery').glob('*'))

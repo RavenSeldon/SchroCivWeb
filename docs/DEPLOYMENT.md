@@ -1,4 +1,4 @@
-[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/shrodingers_civ.git)
+[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/schrodingers_civ.git)
 
 # Launching beside the existing Flask blog
 
@@ -6,7 +6,7 @@ The package is ready for static hosting. Nothing has been published, pushed or c
 
 ## Existing Flask application — confirmed local context
 
-The existing repository is `https://github.com/RavenSeldon/beamu-blog.git`. The supplied parent folder is `/Users/theda/PycharmProjects/PythonProject/`; the Flask application is under **`WebDev/Blog/`**. Its `Procfile` launches `gunicorn wsgi:app`, and `wsgi.py` calls the application factory. These facts were checked by reading the entry-point files and Git remote only; the app was not started or imported.
+The existing repository is `https://github.com/RavenSeldon/beamu-blog.git`. Within that checkout the Flask application is under **`WebDev/Blog/`**. Its `Procfile` launches `gunicorn wsgi:app`, and `wsgi.py` calls the application factory. These facts were checked by reading the entry-point files and Git remote only; the app was not started or imported.
 
 Both `benamuwo.me` and `www.benamuwo.me` belong to the existing site. The new publication's canonical URL remains **https://www.benamuwo.me/schrodingers_civ/**.
 

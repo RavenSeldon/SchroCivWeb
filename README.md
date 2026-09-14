@@ -1,4 +1,4 @@
-[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/shrodingers_civ.git)
+[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/schrodingers_civ.git)
 
 # Schrödinger's Civilization
 
@@ -30,7 +30,7 @@ Build uses only versioned `src/` files and the pinned `marked` dependency. Netwo
 
 Deploy **only `dist/`**, beneath the existing domain's `/schrodingers_civ/` path. Do not publish the workspace root, `src/originals/`, `qa/` or `handoff/`. See [the deployment guide](docs/DEPLOYMENT.md) for DigitalOcean, the scoped Nginx locations, atomic activation, cache policy and rollback.
 
-Nothing was published, pushed or configured on the live server. The existing site is the Flask/Gunicorn app in `beamu-blog`, locally at `/Users/theda/PycharmProjects/PythonProject/WebDev/Blog/`. The next launch step is to inspect its deployed web-server/ingress configuration, then serve this static path directly beside Flask. Both apex and `www` host handling are covered in the guide. For direct Nginx serving, no Flask code, database, models, migrations or Gunicorn restart is required. The optional Flask blueprint and its operator-controlled reload are described separately below. The example configuration has not been tested against that host.
+The publication is live at <https://www.benamuwo.me/schrodingers_civ/>, served beside the existing Flask/Gunicorn blog on the same host. The blog owns the domain; this path is handled by a small isolated Flask blueprint that reads a static release directory and touches no database, model or migration. Both the apex and `www` hosts resolve to it. The deployment guide also documents a direct Nginx location as an alternative — install one owner for the path, not both.
 
 ## Source layout
 
@@ -78,3 +78,11 @@ See [QA evidence](qa/QA.md) and machine reports in `qa/`. Presentation checks ve
 The landing hero uses the supplied Maitrism Seal SVG at `src/assets/identity/maitrism-03-seal-final.svg`. All 23 chapter images remain unchanged.
 
 Optional requested Flask `url.py` and `views.py` integration: see [FLASK-WIRING.md](docs/FLASK-WIRING.md). Example files are included but have not been applied to WebDev. The supplied Maitrism Seal is also the favicon scoped to this publication; the main blog favicon is unchanged.
+
+## License
+
+Software (build scripts, stylesheet, client-side JavaScript) — MIT, see
+[`LICENSE`](LICENSE). Publication content — CC BY 4.0, see
+[`LICENSE-CONTENT.md`](LICENSE-CONTENT.md), which also names what is excluded:
+the supplied chapter artwork, the identity mark, and the underlying research
+package, none of which are relicensed here.

@@ -7,3 +7,4 @@ qa/screenshots/
 .DS_Store
 *.log
 .venv/
+output/

@@ -24,7 +24,10 @@ is `blog.service`.
 
 ## Setup (once)
 
-Add to `~/.ssh/config` so you never type `-i` or an IP again:
+**Required before any deploy command in this file works.** Every one says
+`neurascape`, which is a nickname defined only on your Mac. Verify with
+`ssh neurascape 'whoami'`; if that fails, add to `~/.ssh/config`
+(use whichever of `root` or `myuser` answers over the raw IP):
 
 ```
 Host neurascape

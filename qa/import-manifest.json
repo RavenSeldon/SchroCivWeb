@@ -2,217 +2,217 @@
   "researchHead": "2e978808cc7f007a7dd07bf14d91249469ebe9c4",
   "sources": [
     {
-      "source": "/Users/theda/Root/transmission/submission/tables/table_07_stratum_descriptive.csv",
+      "source": "<research>/submission/tables/table_07_stratum_descriptive.csv",
       "destination": "src/assets/tables/table_07_stratum_descriptive.csv",
       "sha256": "1b5ca149cba80b46dfc4c789bfc42806955da08f26285f62ecd52a9956b0b380",
       "role": "Frozen source table; no recalculation"
     },
     {
-      "source": "/Users/theda/Root/transmission/submission/tables/table_01_corpus.csv",
+      "source": "<research>/submission/tables/table_01_corpus.csv",
       "destination": "src/assets/tables/table_01_corpus.csv",
       "sha256": "685cd9a88eaf14ab8d9fec734c6dfebaa783e44ad40c3cee689acf9ea072734a",
       "role": "Frozen source table; no recalculation"
     },
     {
-      "source": "/Users/theda/Root/transmission/submission/tables/table_03_mechanisms.csv",
+      "source": "<research>/submission/tables/table_03_mechanisms.csv",
       "destination": "src/assets/tables/table_03_mechanisms.csv",
       "sha256": "235508e8b95554bbb1a59788ce995cdadccb4b1ee3e575df34f79abe9f4bb0b6",
       "role": "Frozen source table; no recalculation"
     },
     {
-      "source": "/Users/theda/Root/transmission/submission/tables/table_02_claim_family_results.csv",
+      "source": "<research>/submission/tables/table_02_claim_family_results.csv",
       "destination": "src/assets/tables/table_02_claim_family_results.csv",
       "sha256": "f622f1271736d5a24db9c6aab27ee4539c3454b1b58e12bbda48d14c027494ca",
       "role": "Frozen source table; no recalculation"
     },
     {
-      "source": "/Users/theda/Root/transmission/submission/tables/table_05_surface_body.csv",
+      "source": "<research>/submission/tables/table_05_surface_body.csv",
       "destination": "src/assets/tables/table_05_surface_body.csv",
       "sha256": "8eafd4a4e8229da4126f8d99a5a60716bbe0519c8cb9915aa0231791baecb8e7",
       "role": "Frozen source table; no recalculation"
     },
     {
-      "source": "/Users/theda/Root/transmission/submission/tables/table_04_borderline_sensitivity.csv",
+      "source": "<research>/submission/tables/table_04_borderline_sensitivity.csv",
       "destination": "src/assets/tables/table_04_borderline_sensitivity.csv",
       "sha256": "63f0a1b9cab32e78884a3e01e51b68983088f8b0e3bb84bc79e9571e82f7eedd",
       "role": "Frozen source table; no recalculation"
     },
     {
-      "source": "/Users/theda/Root/transmission/submission/tables/table_06_human_model_agreement.csv",
+      "source": "<research>/submission/tables/table_06_human_model_agreement.csv",
       "destination": "src/assets/tables/table_06_human_model_agreement.csv",
       "sha256": "29bec53c9758359323684754f2d395943c1552b17c81d8440592ae835d5b28b3",
       "role": "Frozen source table; no recalculation"
     },
     {
-      "source": "/Users/theda/Root/transmission/submission/assets/claim_transmission_atlas.svg",
+      "source": "<research>/submission/assets/claim_transmission_atlas.svg",
       "destination": "src/assets/figures/atlas.svg",
       "sha256": "eac1e82817728b4df34d5455c20fdc2390a5d51b391693f10a9af72dc01a6f67",
       "role": "87-tree expanded legibility vector, disclosure chronology corrected; unmodified"
     },
     {
-      "source": "/Users/theda/Downloads/Apart Research Sprint/Minded_Language_Audit_Dossier.html",
+      "source": "<supplied>/Minded_Language_Audit_Dossier.html",
       "destination": "src/content/dossier.html",
       "sha256": "202ec93661515172efadd2e8d415eefcf6dbb0eb1059078787fb5be730a398e0",
       "role": "Guided dossier; SVGs externalized; stale PDF script and download notes omitted"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/TRANSLATOR_STORY.md",
+      "source": "handoff/TRANSLATOR_STORY.md",
       "destination": "src/content/tale-source.md",
       "sha256": "ffe7e60389e0b8ddf738146f929d85b8ff55ad4d016ce7023c9f2c5339d0ec46",
       "role": "Original narrative with chat citation markers already removed"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/PROLOGUE.png",
+      "source": "handoff/gallery/PROLOGUE.png",
       "destination": "src/assets/art/prologue.webp",
       "sha256": "7b9ac825759b6ecb137ed531d54897d1146c8b287fa72bbe010ed118392692c8",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/I.png",
+      "source": "handoff/gallery/I.png",
       "destination": "src/assets/art/i.webp",
       "sha256": "7ae4ae9affa32a399cfa3c927c0d2c6fb50a0863bc5ec934f51382d8388b0c12",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/II.png",
+      "source": "handoff/gallery/II.png",
       "destination": "src/assets/art/ii.webp",
       "sha256": "f8dcaf078ff82d5b1d13afeecfd1dd2f5dc848dbcaa16b85c0f7324888e1b8e4",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/III.png",
+      "source": "handoff/gallery/III.png",
       "destination": "src/assets/art/iii.webp",
       "sha256": "ea513443e88106a7ff227a91dd96f9456f324c5ac4ba966615ba5b53206cd76b",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/IV.png",
+      "source": "handoff/gallery/IV.png",
       "destination": "src/assets/art/iv.webp",
       "sha256": "593fabc85018081906b0441fa7049fa1e3d58661c6b50a196281b3b63e2b3f12",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/V.png",
+      "source": "handoff/gallery/V.png",
       "destination": "src/assets/art/v.webp",
       "sha256": "76229e7f9d88918c818c8a507f8a83039f1a6f8fb07ff11ce30152ff27110fbb",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/VI.png",
+      "source": "handoff/gallery/VI.png",
       "destination": "src/assets/art/vi.webp",
       "sha256": "c9778f0c98ccc5747348f0264dc031007b0c2181f7c8d1809a801d1315b95d1d",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/VII.png",
+      "source": "handoff/gallery/VII.png",
       "destination": "src/assets/art/vii.webp",
       "sha256": "f56b6af45d1f288d1d8446b1948aa67cd36f48115ce64e3a958d85b39360d460",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/VIII.png",
+      "source": "handoff/gallery/VIII.png",
       "destination": "src/assets/art/viii.webp",
       "sha256": "0b6d09e00cc06bf4031b34782b69aba02cdbca35e572a56b45aed12ddafb2cd7",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/IX.png",
+      "source": "handoff/gallery/IX.png",
       "destination": "src/assets/art/ix.webp",
       "sha256": "1d690d1e5be8828b65da0b195a3e0cdbfd54c2d505865fa342cdc609164654b8",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/X.png",
+      "source": "handoff/gallery/X.png",
       "destination": "src/assets/art/x.webp",
       "sha256": "1d7cc15455c0625da9d4f75ae3002c3e52e35a3ba302afaae6407314e7679f51",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XI.png",
+      "source": "handoff/gallery/XI.png",
       "destination": "src/assets/art/xi.webp",
       "sha256": "8b0480b089cca84b2fea35290f185ed60d54a1a967aa89f7448f1cbef02e0a2d",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XII.png",
+      "source": "handoff/gallery/XII.png",
       "destination": "src/assets/art/xii.webp",
       "sha256": "b2dd11e114258e1b95e40f55b5c04519def12b0da809224512c951bb4ca22ac9",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XIII.png",
+      "source": "handoff/gallery/XIII.png",
       "destination": "src/assets/art/xiii.webp",
       "sha256": "2b7b3284ed48b3b582414cc2448d28716657f527187fc8214704aa916c988ddf",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XIV.png",
+      "source": "handoff/gallery/XIV.png",
       "destination": "src/assets/art/xiv.webp",
       "sha256": "95291277389b64418c9fe41729e4da445e3fc42f89e6211a959f9fdcd70744ac",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XV.png",
+      "source": "handoff/gallery/XV.png",
       "destination": "src/assets/art/xv.webp",
       "sha256": "05d5dfb11b5998d3e5e2b4bf89df8dec7059ab83aef8c635796335ee1c99c61e",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XVI.png",
+      "source": "handoff/gallery/XVI.png",
       "destination": "src/assets/art/xvi.webp",
       "sha256": "ea274b196a93c935155c756629e8f99693b651cf231830a1d2fc89df3625b799",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XVII.png",
+      "source": "handoff/gallery/XVII.png",
       "destination": "src/assets/art/xvii.webp",
       "sha256": "335e7e2a4452b220c6ecb421a71095b5b3c3c6ddd26ce7ebf220b2a720b13543",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XVIII.png",
+      "source": "handoff/gallery/XVIII.png",
       "destination": "src/assets/art/xviii.webp",
       "sha256": "74639292e787fc46ecf89c65a06e3301163be9d1062ccd83df05cd9f0bb5a3e7",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XIX.png",
+      "source": "handoff/gallery/XIX.png",
       "destination": "src/assets/art/xix.webp",
       "sha256": "9c8b1ff6b7536759914cb55df445faa4acabb141c30b6ca8742848419fa62615",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XX.png",
+      "source": "handoff/gallery/XX.png",
       "destination": "src/assets/art/xx.webp",
       "sha256": "6f2fa8ddb39527314af93a9636167a0db234cdb7f6458eb2b4c7eaf8d1af149f",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/XXI.png",
+      "source": "handoff/gallery/XXI.png",
       "destination": "src/assets/art/xxi.webp",
       "sha256": "8c2509a1e49b343c5661b486f3df0aec865975a3ea308cea68350e6dc92a53b6",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/gallery/EPILOGUE.png",
+      "source": "handoff/gallery/EPILOGUE.png",
       "destination": "src/assets/art/epilogue.webp",
       "sha256": "d56b07b8e6465e7084b0ed59cfff412edaf29280ff29c84371883c0eae76a4f8",
       "role": "Chapter artwork; WebP at original dimensions, no upscaling"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/Minded_Language_Audit_v1.0_Amuwo_Reading_Edition.pdf",
+      "source": "handoff/Minded_Language_Audit_v1.0_Amuwo_Reading_Edition.pdf",
       "destination": "src/originals/Minded_Language_Audit_v1.0_Amuwo_Reading_Edition.pdf",
       "sha256": "376f0e457e376563a9e8da5e75e294731c94cf50546e3dcfeb462422befdf2ec",
       "role": "Immutable supplied PDF, excluded from public output"
     },
     {
-      "source": "/Users/theda/Root/transmission_live/handoff/Claim_Transmission_Atlas_v1.0_Apart_Submission_FINAL.pdf",
+      "source": "handoff/Claim_Transmission_Atlas_v1.0_Apart_Submission_FINAL.pdf",
       "destination": "src/originals/Claim_Transmission_Atlas_v1.0_Apart_Submission_FINAL.pdf",
       "sha256": "d010a7275c1230645119470713e75b0214f409d6d5b699aec27e1ec6036715ae",
       "role": "Immutable supplied PDF, excluded from public output"
     },
     {
-      "source": "/Users/theda/Downloads/symbology/maitrism-03-seal-final.svg",
+      "source": "<supplied>/symbology/maitrism-03-seal-final.svg",
       "destination": "src/assets/identity/maitrism-03-seal-final.svg",
       "sha256": "0ec1ea476e8dfae4f915de8d30229f13ab698f032197fbc328b1d88a5c605eff",
       "role": "User-selected landing hero seal; original SVG bytes, no change to chapter artwork"
