@@ -6,7 +6,7 @@ from pypdf import PdfReader
 from PIL import Image, ImageChops
 root=Path(__file__).resolve().parents[1];reports=[]
 (root/'qa/source').mkdir(parents=True,exist_ok=True)
-urls=['https://www.benamuwo.me/schrodingers_civ/','https://github.com/RavenSeldon/shrodingers_civ.git']
+urls=['https://www.benamuwo.me/schrodingers_civ/','https://github.com/RavenSeldon/schrodingers_civ']
 for name,filename in [('audit','Minded_Language_Audit_v1.0_Amuwo_Reading_Edition.pdf'),('atlas','Claim_Transmission_Atlas_v1.0_Apart_Submission_FINAL.pdf')]:
  a=root/'src/originals'/filename;b=root/f'dist/assets/papers/{name}.pdf'
  with pdfplumber.open(a) as original,pdfplumber.open(b) as derived:

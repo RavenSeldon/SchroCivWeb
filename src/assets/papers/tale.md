@@ -1,4 +1,4 @@
-[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/shrodingers_civ.git)
+[Project website](https://www.benamuwo.me/schrodingers_civ/) · [Research repository](https://github.com/RavenSeldon/schrodingers_civ)
 
 # WITH EFFORT, TO THE STARS  
 ## A History of the Claim Transmission Atlas, and of the People Who Carried It

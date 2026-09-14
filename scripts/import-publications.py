@@ -13,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 RESEARCH=Path(os.environ.get('RESEARCH_ROOT','../transmission')).expanduser()
 DOSSIER=Path(os.environ.get('DOSSIER_HTML','../Minded_Language_Audit_Dossier.html')).expanduser()
 BASE='https://www.benamuwo.me/schrodingers_civ/'
-GITHUB='https://github.com/RavenSeldon/shrodingers_civ.git'
+GITHUB='https://github.com/RavenSeldon/schrodingers_civ'
 HEADER=f'[Project website]({BASE}) · [Research repository]({GITHUB})\n\n'
 records=[]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
