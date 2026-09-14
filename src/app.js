@@ -1,24 +1,21 @@
 /* Small, optional enhancements. Every reader and chapter is a real HTML route. */
+let taleTick=()=>{};
 document.documentElement.classList.add('js');
 const menu=document.querySelector('#navigation-dialog');
 const opener=document.querySelector('.menu-button');
 function openDialog(dialog,button){dialog._opener=button;dialog.showModal();document.body.classList.add('modal-open');button?.setAttribute('aria-expanded','true');}
 function closeDialog(dialog){if(dialog.open)dialog.close();}
-for(const dialog of document.querySelectorAll('dialog')){
+function wireDialog(dialog){if(dialog._wired)return;dialog._wired=true;
  dialog.addEventListener('keydown',event=>{if(event.key!=='Tab')return;const items=[...dialog.querySelectorAll('a[href],button:not([disabled]),[tabindex="0"]')].filter(el=>el.getClientRects().length);const first=items[0],last=items.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}});
  dialog.addEventListener('click',event=>{const r=dialog.getBoundingClientRect();if(event.target===dialog&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))closeDialog(dialog);});
  dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');dialog._opener?.setAttribute('aria-expanded','false');dialog._opener?.focus({preventScroll:true});});
 }
+document.querySelectorAll('dialog').forEach(wireDialog);
 opener?.addEventListener('click',()=>openDialog(menu,opener));
 menu?.querySelector('.close-menu').addEventListener('click',()=>closeDialog(menu));
 menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeDialog(menu)));
-const artwork=document.querySelector('.art-dialog'),artButton=document.querySelector('.art-open');
-artButton?.addEventListener('click',()=>openDialog(artwork,artButton));
-artwork?.querySelector('.art-close').addEventListener('click',()=>closeDialog(artwork));
 const railLinks=[...document.querySelectorAll('.rail a[href^="#"]')];
 if(railLinks.length&&'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){for(const a of railLinks)a.classList.toggle('active',a.hash==='#'+entry.target.id);}},{rootMargin:'-15% 0px -70% 0px'});railLinks.forEach(a=>{const el=document.getElementById(a.hash.slice(1));if(el)observer.observe(el);});}
-const activeChapter=document.querySelector('.rail a[aria-current="page"]');
-if(activeChapter){const rail=document.querySelector('.rail');rail.scrollTop=Math.max(0,activeChapter.offsetTop-rail.clientHeight/2);}
 for(const viewer of document.querySelectorAll('[data-viewer]')){
  const viewport=viewer.querySelector('.viewer-window'),img=viewport.querySelector('img'),status=viewer.querySelector('[data-scale]');
  let scale=1,x=0,y=0,pan=false,pointers=new Map(),lastPinch=null;
@@ -36,44 +33,108 @@ for(const viewer of document.querySelectorAll('[data-viewer]')){
  for(const type of ['pointerup','pointercancel','lostpointercapture'])viewport.addEventListener(type,e=>{pointers.delete(e.pointerId);lastPinch=null;});
  window.addEventListener('resize',update);update();
 }
-const progress=document.querySelector('.reading-progress span');
-if(progress){let scheduled=false;const tick=()=>{progress.style.width=(Math.min(1,window.scrollY/Math.max(1,document.documentElement.scrollHeight-window.innerHeight))*100)+'%';scheduled=false;};window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(tick);}},{passive:true});tick();
- document.addEventListener('keydown',e=>{if(!e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||document.querySelector('dialog[open]')||getSelection()?.toString()||e.target.closest('input,textarea,select,[contenteditable]'))return;const next=e.key==='ArrowRight'?'next':e.key==='ArrowLeft'?'prev':null;const a=next&&document.querySelector(`.chapter-pagination a[rel="${next}"]`);if(a){e.preventDefault();location.assign(a.href);}});
+let progressEl=document.querySelector('.reading-progress span');
+{let scheduled=false;
+ const tick=()=>{if(progressEl)progressEl.style.width=(Math.min(1,window.scrollY/Math.max(1,document.documentElement.scrollHeight-window.innerHeight))*100)+'%';scheduled=false;};
+ window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(tick);}},{passive:true});
+ taleTick=tick;
+ document.addEventListener('keydown',e=>{if(!e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||document.querySelector('dialog[open]')||getSelection()?.toString()||e.target.closest('input,textarea,select,[contenteditable]'))return;const next=e.key==='ArrowRight'?'next':e.key==='ArrowLeft'?'prev':null;const a=next&&document.querySelector(`.chapter-pagination a[rel="${next}"]`);if(a){e.preventDefault();go(a.href);}});
 }
 
-/* Tale soundtrack. One playlist shared across chapters: position and play-state
-   live in sessionStorage, so turning a chapter resumes rather than restarts.
-   Nothing here runs unless the build emitted a player, which it only does when
-   src/assets/audio/ contains files. First play always needs a click — browsers
-   refuse to start audio otherwise — but later chapters resume on their own once
-   the origin has earned media engagement. */
+/* Tale soundtrack. The player is emitted outside #page-shell, so the chapter
+   swap below never touches it: one <audio> element serves the whole read and the
+   sound is continuous across chapter turns. sessionStorage still carries the
+   position, but only as a fallback for a hard load — a reload, or landing on a
+   chapter directly. Nothing is emitted at all unless src/assets/audio/ has files. */
 const taleBtn=document.querySelector('.tale-audio'),taleEl=document.querySelector('.tale-audio-el');
 if(taleBtn&&taleEl){
- const tracks=JSON.parse(taleBtn.dataset.tracks||'[]'),KEY='tale-audio';
+ const tracks=JSON.parse(taleBtn.dataset.tracks||'[]'),KEY='tale-audio',REST=3000;
  const read=()=>{try{return JSON.parse(sessionStorage.getItem(KEY))||{};}catch{return {};}};
  const prior=read();
  let index=Number.isInteger(prior.i)&&tracks[prior.i]?prior.i:0;
- const save=()=>{try{sessionStorage.setItem(KEY,JSON.stringify({i:index,t:taleEl.currentTime,playing:!taleEl.paused}));}catch{}};
- const reflect=()=>{const on=!taleEl.paused;taleBtn.setAttribute('aria-pressed',String(on));taleBtn.setAttribute('aria-label',on?'Pause background music':'Play background music');};
- const start=()=>taleEl.play().then(reflect,reflect);
- taleEl.volume=0.4;            // background bed, not foreground; adjust to taste
- taleEl.loop=tracks.length===1; // a lone track loops gaplessly; a playlist advances below
- // Bandwidth: a reader who never presses play must not pay for the file. Only
- // preload when we are actually resuming a session already in progress; a first
- // click triggers the fetch on its own.
+ // wantPlaying is the reader's intent, which outlives the element's paused state:
+ // during the rest between the last track and the first the audio is paused, but
+ // the star must stay lit and the loop must still resume.
+ let wantPlaying=false,restTimer=null;
+ const save=()=>{try{sessionStorage.setItem(KEY,JSON.stringify({i:index,t:taleEl.currentTime,playing:wantPlaying}));}catch{}};
+ const reflect=()=>{taleBtn.setAttribute('aria-pressed',String(wantPlaying));taleBtn.setAttribute('aria-label',wantPlaying?'Pause background music':'Play background music');};
+ // Light the star on intent, but drop it again if the browser refuses to play,
+ // so the control never claims sound that is not happening.
+ const start=()=>{wantPlaying=true;reflect();return taleEl.play().then(reflect,()=>{wantPlaying=false;reflect();});};
+ const stop=()=>{wantPlaying=false;clearTimeout(restTimer);taleEl.pause();reflect();};
+ taleEl.volume=0.4;          // background bed, not foreground; adjust to taste
+ taleEl.loop=false;          // the ended handler owns looping, so it can rest
  const resuming=!!prior.playing;
- taleEl.preload=resuming?'auto':'none';
+ taleEl.preload=resuming?'auto':'none';   // a reader who never presses play pays nothing
  if(tracks[index]&&taleEl.getAttribute('src')!==tracks[index])taleEl.src=tracks[index];
  const seek=prior.t>0?prior.t:0;
- // currentTime cannot be set before metadata exists, so seek once it does --
- // and when resuming, seek BEFORE starting, or the track blips from zero.
  const seekThen=after=>taleEl.addEventListener('loadedmetadata',()=>{if(seek&&seek<taleEl.duration)taleEl.currentTime=seek;after&&after();},{once:true});
- taleBtn.addEventListener('click',()=>{taleEl.paused?start():(taleEl.pause(),reflect());save();});
- taleEl.addEventListener('ended',()=>{index=(index+1)%tracks.length;taleEl.src=tracks[index];start();save();});
- taleEl.addEventListener('play',reflect);
- taleEl.addEventListener('pause',reflect);
+ taleBtn.addEventListener('click',()=>{wantPlaying?stop():start();save();});
+ taleEl.addEventListener('ended',()=>{
+  const wrapped=index+1>=tracks.length;
+  index=(index+1)%tracks.length;
+  taleEl.src=tracks[index];save();
+  // The playlist loops with a short rest: after the last track the first returns
+  // three seconds later rather than snapping straight back.
+  if(wrapped)restTimer=setTimeout(()=>{if(wantPlaying)taleEl.play().then(reflect,reflect);},REST);
+  else taleEl.play().then(reflect,reflect);
+ });
  addEventListener('pagehide',save);
  setInterval(save,4000);
  if(resuming){seek?seekThen(start):start();}else if(seek){seekThen();}
  reflect();
 }
+
+/* Seamless chapter turns. A full page load destroys the <audio> element and its
+   buffer, which is why restoring the position alone still left a gap — and on
+   Safari and Firefox often refused to resume at all, there being no user gesture
+   in the new document. Chapter-to-chapter links are therefore swapped in place:
+   only <main> and the rail are replaced, the player is untouched, and the sound
+   never stops. Every other link stays a real navigation, so leaving the tale
+   tears the document down and the music ends, which is the intended behaviour.
+   With JS off, or on any failure, these are ordinary links. */
+const CHAPTER=/\/tale\/[^/]+\/$/;
+const onChapter=()=>document.body.classList.contains('chapter-page');
+const isChapterUrl=u=>{try{const x=new URL(u,location.href);return x.origin===location.origin&&CHAPTER.test(x.pathname);}catch{return false;}};
+let navigating=false;
+async function go(href,push=true){
+ if(!onChapter()||!isChapterUrl(href)||navigating){location.assign(href);return;}
+ navigating=true;
+ try{
+  const res=await fetch(href,{credentials:'same-origin'});
+  if(!res.ok)throw new Error('fetch');
+  const doc=new DOMParser().parseFromString(await res.text(),'text/html');
+  const next=doc.querySelector('main#main'),cur=document.querySelector('main#main');
+  if(!next||!cur)throw new Error('shape');
+  cur.replaceChildren(...next.childNodes);
+  const rail=document.querySelector('.rail'),nextRail=doc.querySelector('.rail');
+  if(rail&&nextRail)rail.replaceChildren(...nextRail.childNodes);
+  document.title=doc.title;
+  if(push)history.pushState({tale:1},'',href);
+  scrollTo(0,0);
+  mountChapter();
+  cur.focus({preventScroll:true});
+ }catch{location.assign(href);}
+ finally{navigating=false;}
+}
+document.addEventListener('click',e=>{
+ if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+ const a=e.target.closest('a[href]');
+ if(!a||a.target||a.hasAttribute('download')||!onChapter()||!isChapterUrl(a.href))return;
+ e.preventDefault();go(a.href);
+});
+addEventListener('popstate',()=>{if(onChapter()&&isChapterUrl(location.href))go(location.href,false);else location.reload();});
+
+/* Re-run the bindings that live inside the swapped region. Everything else --
+   the menu dialog, the rail observer, the atlas viewer -- is bound once and is
+   either outside <main> or absent from chapter pages. */
+function mountChapter(){
+ const artwork=document.querySelector('.art-dialog'),artButton=document.querySelector('.art-open');
+ if(artwork){wireDialog(artwork);artwork.querySelector('.art-close')?.addEventListener('click',()=>closeDialog(artwork));}
+ if(artButton&&artwork)artButton.addEventListener('click',()=>openDialog(artwork,artButton));
+ progressEl=document.querySelector('.reading-progress span');
+ const active=document.querySelector('.rail a[aria-current="page"]'),rail=document.querySelector('.rail');
+ if(active&&rail)rail.scrollTop=Math.max(0,active.offsetTop-rail.clientHeight/2);
+ taleTick();
+}
+mountChapter();
