@@ -68,13 +68,17 @@ cd ~/Root/transmission_live/src/assets/audio
 n=1
 for f in "$SOURCE"/*; do
   name=$(basename "${f%.*}" | tr '[:upper:] ' '[:lower:]_' | tr -cd 'a-z0-9._-')
-  ffmpeg -loglevel error -i "$f" -c:a aac -b:a 64k -ar 44100 \
+  ffmpeg -loglevel error -i "$f" -vn -c:a aac -b:a 64k -ar 44100 \
          -af "lowpass=f=15000" -movflags +faststart \
          "$(printf '%02d' $n)_${name}.m4a"
   n=$((n+1))
 done
 ls -lh
 ```
+
+`-vn` drops any video stream. Music files often carry one — a music video, or
+artwork encoded as video — and an `.m4a` container refuses it, so without that
+flag ffmpeg writes nothing at all.
 
 **Should say:** five `.m4a` files named `01_…` to `05_…`, a couple of MB each.
 They play in that number order, then start again from `01`.
@@ -190,6 +194,12 @@ Steps 2 and 4.
 
 **`zsh: no matches found`** — a `*` matched nothing and zsh gave up on the whole
 line. Nothing ran. Not your fault; re-run with a real filename.
+
+**`Could not find tag for codec h264` / `Nothing was written into output file`** —
+the source carries a video stream and the `.m4a` container rejects it. Make sure
+the ffmpeg line has `-vn` immediately after `-i "$f"`. Check with
+`ffprobe -v error -show_entries stream=codec_type -of csv=p=0 yourfile.mp4`; if it
+lists `video`, that's the cause.
 
 **`Unable to create '.git/index.lock'`** — run `find .git -name '*.lock' -delete`
 and try again.
