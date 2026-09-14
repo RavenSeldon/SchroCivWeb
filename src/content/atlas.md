@@ -80,7 +80,7 @@ Limitations. Search completeness is UNVERIFIED. The corpus is small, outlet-weig
 
 ## Future Work
 
-The most valuable extensions are replication across additional incidents, an independent human-coder replication, a preregistered reader evaluation of whether evidence-state cards improve recall, and implementation of the deferred minded-language sidecar only after its serialization contract is frozen. A public project website can host the full frozen protocol, corpus manifest, coding provenance, Atlas, and reproducibility materials after Author approval.
+The most valuable extensions are replication across additional incidents, an independent human-coder replication, a preregistered reader evaluation of whether evidence-state cards improve recall, and implementation of the deferred minded-language sidecar only after its serialization contract is frozen. The public project website is www.benamuwo.me/schrodingers_civ/atlas/ and hosts the frozen protocol, corpus manifest, coding provenance, Atlas, and reproducibility materials.
 
 <!-- source-page: 4 -->
 
@@ -92,7 +92,7 @@ The practical lesson is not that press coverage was broadly unreliable; it is th
 
 ## Code and Data
 
-Project website: [URL to be added after Author approval]. The website will host the frozen protocol, corpus manifest, coding and adjudication provenance, analysis outputs, full-resolution Claim Transmission Atlas, and reproducibility materials. Any material withheld for dual-use reasons will be identified there.
+Project website: www.benamuwo.me/schrodingers_civ/atlas/. The website will host the frozen protocol, corpus manifest, coding and adjudication provenance, analysis outputs, full-resolution Claim Transmission Atlas, and reproducibility materials. Any material withheld for dual-use reasons will be identified there.
 
 Github:
 
@@ -167,7 +167,6 @@ LLM systems materially assisted the project across acquisition support, tooling,
 
 - Confirm the exact frozen D-001 wording if the final manuscript is intended to quote it verbatim.
 
-- Replace the affiliation placeholder and complete any funding/competing-interest fields required by the Sprint.
 
 - Insert the final project website URL after Author approval.
 
