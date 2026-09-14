@@ -1,0 +1,12 @@
+--- a/app/routes/__init__.py
++++ b/app/routes/__init__.py
+@@ -4,6 +4,9 @@
+ 
+ 
+ def register_blueprints(app):
++    from app.routes.schrodingers_civ.url import schrodingers_civ_bp
++    app.register_blueprint(schrodingers_civ_bp)
++
+     from app.routes.main import main_bp
+     from app.routes.auth import auth_bp
+     from app.routes.posts import posts_bp

@@ -1,0 +1,844 @@
+{
+  "browser": "153.0.8010.12",
+  "platform": "darwin",
+  "routes": [
+    {
+      "route": "",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "audit/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "audit/paper/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "atlas/paper/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "atlas/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/prologue/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-author-and-the-lowly-human/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/head-office/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-acquisition-workers/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-watchers/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-d-line-and-the-machinery-of-human-judgment/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-lowly-human-codes/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/worker-e-who-was-not-allowed-to-know/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/disagreement/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/worker-f-at-the-gate-of-results/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/worker-f-2/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-artist/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/head-office-returns-to-the-repository/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-valiant-and-the-last-gates/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/those-who-stand-half-seen/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/immortalization/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-song-of-head-office/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-song-of-the-valiant/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-song-of-the-author/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/the-story-of-the-lowly-human/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/and-then-i-awoke/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/constellations/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "tale/epilogue/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "about/",
+      "status": 200,
+      "reload": 200
+    },
+    {
+      "route": "404/",
+      "status": 200,
+      "reload": 200
+    }
+  ],
+  "layouts": [
+    {
+      "label": " phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "17px"
+    },
+    {
+      "label": "audit/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "17px"
+    },
+    {
+      "label": "audit/paper/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "17px"
+    },
+    {
+      "label": "atlas/paper/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "17px"
+    },
+    {
+      "label": "atlas/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "17px"
+    },
+    {
+      "label": "tale/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "17px"
+    },
+    {
+      "label": "tale/prologue/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-author-and-the-lowly-human/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/head-office/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-acquisition-workers/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-watchers/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-d-line-and-the-machinery-of-human-judgment/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-lowly-human-codes/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/worker-e-who-was-not-allowed-to-know/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/disagreement/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/worker-f-at-the-gate-of-results/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/worker-f-2/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-artist/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/head-office-returns-to-the-repository/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-valiant-and-the-last-gates/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/those-who-stand-half-seen/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/immortalization/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-song-of-head-office/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-song-of-the-valiant/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-song-of-the-author/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-story-of-the-lowly-human/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/and-then-i-awoke/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/constellations/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/epilogue/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "about/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "17px"
+    },
+    {
+      "label": "404/ phone",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "17px"
+    },
+    {
+      "label": " phone-landscape",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "audit/ phone-landscape",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "atlas/ phone-landscape",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-song-of-head-office/ phone-landscape",
+      "width": 844,
+      "height": 390,
+      "scrollWidth": 844,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "19px"
+    },
+    {
+      "label": " tablet-portrait",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "audit/ tablet-portrait",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "atlas/ tablet-portrait",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-song-of-head-office/ tablet-portrait",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "19px"
+    },
+    {
+      "label": " tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "audit/ tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "atlas/ tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-song-of-head-office/ tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "19px"
+    },
+    {
+      "label": " desktop",
+      "width": 1440,
+      "height": 1000,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "audit/ desktop",
+      "width": 1440,
+      "height": 1000,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "atlas/ desktop",
+      "width": 1440,
+      "height": 1000,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-song-of-head-office/ desktop",
+      "width": 1440,
+      "height": 1000,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "19px"
+    },
+    {
+      "label": " wide",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "audit/ wide",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "atlas/ wide",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "18px"
+    },
+    {
+      "label": "tale/the-song-of-head-office/ wide",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "19px"
+    },
+    {
+      "label": "Tale at 200% CSS zoom",
+      "width": 1440,
+      "height": 1000,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "19px"
+    },
+    {
+      "label": "1440x1000 at 200% effective CSS viewport",
+      "width": 720,
+      "height": 500,
+      "scrollWidth": 720,
+      "overflow": false,
+      "brokenImages": [],
+      "bodyFont": "19px"
+    }
+  ],
+  "interactions": [
+    "Drawer escape dismissal and focus restoration: pass",
+    "Drawer close dismissal and focus restoration: pass",
+    "Drawer outside dismissal and focus restoration: pass",
+    "Drawer selection dismissal and focus restoration: pass",
+    "Native modal background inert: pass",
+    "Viewer keyboard zoom, pan, Home reset, drag mode and ordinary scrolling mode: pass",
+    "Artwork modal, next chapter, browser back/forward and Alt+ArrowRight: pass",
+    "Reduced-motion CSS active: pass",
+    "Unknown route returns HTTP 404 with navigable page: pass",
+    "Trailing slash redirect: 308",
+    "No-JavaScript complete reading: audit, Atlas and tale pass",
+    "Keyboard skip navigation: pass"
+  ],
+  "consoleErrors": [],
+  "networkFailures": [],
+  "axe": [
+    {
+      "route": "",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "audit/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "audit/paper/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "atlas/paper/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "atlas/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/prologue/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-author-and-the-lowly-human/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/head-office/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-acquisition-workers/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-watchers/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-d-line-and-the-machinery-of-human-judgment/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-lowly-human-codes/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/worker-e-who-was-not-allowed-to-know/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/disagreement/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/worker-f-at-the-gate-of-results/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/worker-f-2/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-artist/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/head-office-returns-to-the-repository/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-valiant-and-the-last-gates/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/those-who-stand-half-seen/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/immortalization/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-song-of-head-office/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-song-of-the-valiant/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-song-of-the-author/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/the-story-of-the-lowly-human/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/and-then-i-awoke/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/constellations/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "tale/epilogue/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "about/",
+      "viewport": "360x800",
+      "violations": []
+    },
+    {
+      "route": "404/",
+      "viewport": "360x800",
+      "violations": []
+    }
+  ],
+  "limitations": [
+    "Chromium emulation, not physical devices.",
+    "200% layout tested via CSS zoom and a halved effective viewport; browser-native desktop zoom and OS text scaling are not automated.",
+    "No live server configuration was inspected."
+  ],
+  "localPerformance": {
+    "navigation": [
+      {
+        "domContentLoaded": 14,
+        "duration": 14.099999994039536,
+        "transferSize": 6940
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://127.0.0.1:4173/schrodingers_civ/assets/styles.css",
+        "transferSize": 26705,
+        "duration": 2
+      },
+      {
+        "name": "http://127.0.0.1:4173/schrodingers_civ/assets/app.js",
+        "transferSize": 5979,
+        "duration": 2.0999999940395355
+      },
+      {
+        "name": "http://127.0.0.1:4173/schrodingers_civ/assets/art/prologue.webp",
+        "transferSize": 34204,
+        "duration": 2
+      }
+    ]
+  }
+}

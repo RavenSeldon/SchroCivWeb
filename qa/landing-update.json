@@ -1,0 +1,22 @@
+{
+  "checks": [
+    {
+      "width": 360,
+      "height": 800,
+      "heroLoaded": true,
+      "uncropped": true,
+      "axeViolations": 0
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "heroLoaded": true,
+      "uncropped": true,
+      "axeViolations": 0
+    }
+  ],
+  "unchangedNonLandingHtmlDocuments": 31,
+  "unchangedChapterImages": 23,
+  "sealAndFaviconSha256": "0ec1ea476e8dfae4f915de8d30229f13ab698f032197fbc328b1d88a5c605eff",
+  "faviconHttpStatus": 200
+}

@@ -1,0 +1,9 @@
+field,eligible_n,exact_matches,agreement_pct,contingency_note
+represented,64,40,62.5,F/F 19; F/T 7; T/F 17; T/T 21
+Clock A,21,15,71.43,F/F 15; DRIFT/F 2; F/DRIFT 1; NA/F 3
+Clock B,21,17,80.95,F/F 17; DRIFT/F 2; F/DRIFT 2
+borderline,21,21,100.0,all NONE/NONE; no positive BORDERLINE case
+novel reporting,21,18,85.71,3 disagreements: human TRUE / model FALSE
+mechanism family,0,0,,not estimable; no jointly eligible rows
+direction,0,0,,not estimable; no jointly eligible rows
+K1 subtype,0,0,,not estimable; no jointly eligible rows

@@ -1,0 +1,5 @@
+claim_family,label,assessable_n,faithful,drift,borderline,excluded_unrepresented,excluded_novel_reporting,lower_n,lower_pct,upper_n,upper_pct,adjudicated_n,adjudicated_pct
+C1,C1 populations,20,16,2,2,3,1,2,10.0,4,20.0,2,10.0
+C2,C2 motive/objective,21,17,4,0,2,1,4,19.0,4,19.0,4,19.0
+C4,C4 escape/boundary crossing,19,18,1,0,3,2,1,5.3,1,5.3,1,5.3
+C5,C5 compromise scope,23,23,0,0,1,0,0,0.0,0,0.0,0,0.0

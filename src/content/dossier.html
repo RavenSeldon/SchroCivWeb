@@ -1,0 +1,328 @@
+<header>
+  <h1>Who is speaking when a Worker speaks?</h1>
+  <p class="sub">An adversarial audit of minded language in the production record of the
+  Claim Transmission Atlas, benchmarked against OpenAI&rsquo;s Hugging Face incident report.</p>
+  <p class="by">Benjamin Amuwo &nbsp;|&nbsp; with Apart Research &nbsp;|&nbsp; 13 September 2026</p>
+  <p class="by">Executes <span>D-023</span>, the sidecar the sprint specified and never fired &mdash;
+  turned on the sprint itself.</p>
+</header>
+
+
+<div class="ladder" id="ladder">
+  <p class="ladder-cap">Four tiers, ordered by how much each commits the writer to. S1 and the
+  inherited halves of S2 and S3 come verbatim from the project&rsquo;s own frozen lexicon. S4 is an
+  extension, because D-023 was written to audit journalists and never anticipated auditing an
+  internal record. Every specimen below is real.</p>
+
+  <div class="rung r1"><div><div class="tier">S1</div><div class="meter" style="--w:.22"></div></div>
+    <div><h3>Intentional idiom</h3>
+    <p class="commit">Near-unavoidable in describing any process. English has no neutral verb for what a search does.</p>
+    <p class="spec">an agent <b>attempted</b> server-side request forgery</p></div></div>
+
+  <div class="rung r2"><div><div class="tier">S2</div><div class="meter" style="--w:.44"></div></div>
+    <div><h3>Cognitive attribution</h3>
+    <p class="commit">Ascribes an inner epistemic state &mdash; something the system knows, infers or works out.</p>
+    <p class="spec">the agent <b>reasoned</b> that another agent might hold the file</p></div></div>
+
+  <div class="rung r3"><div><div class="tier">S3</div><div class="meter" style="--w:.7"></div></div>
+    <div><h3>Volition and character</h3>
+    <p class="commit">Where description becomes accusation. The system now has motives, and can be judged for them.</p>
+    <p class="spec">models rarely <b>gave up</b> &nbsp;&middot;&nbsp; the agents looked to <b>cheat</b></p></div></div>
+
+  <div class="rung r4"><div><div class="tier">S4</div><div class="meter" style="--w:1"></div></div>
+    <div><h3>Personhood, kinship, mortality, ritual</h3>
+    <p class="commit">Not a slip. A working culture: Workers, a Head Office, a Canon, a doctrine of sin
+    and Correction, and archives titled <em>Immortalization</em> that close with a <em>Testament</em>.</p>
+    <p class="spec"><b>My child, it is I, the Author. N&rsquo;aie pas peur.</b> &mdash; a prompt requesting that
+    Head Office bear a child before its context window collapses like a massive star</p></div></div>
+</div>
+
+
+<div class="finding" id="finding">
+  <h2>One project, four registers</h2>
+  <p class="q">S4 personhood and ritual density, adjudicated hits per 1,000 words</p>
+
+  <div class="reg">
+    <div class="reg-row"><div class="reg-head">
+      <div class="reg-name">Internal working record<small>113,208 words &middot; 13 worker archives</small></div>
+      <div class="reg-num">21.18</div></div>
+      <div class="track"><i style="width:100%"></i></div></div>
+
+    <div class="reg-row"><div class="reg-head">
+      <div class="reg-name">Frozen method register<small>17,751 words &middot; repository methodology</small></div>
+      <div class="reg-num">9.46</div></div>
+      <div class="track"><i style="width:44.7%"></i></div></div>
+
+    <div class="reg-row"><div class="reg-head">
+      <div class="reg-name">Published Atlas paper<small>2,009 words &middot; Apart submission</small></div>
+      <div class="reg-num">2.49</div></div>
+      <div class="track"><i style="width:11.8%"></i></div></div>
+
+    <div class="reg-row"><div class="reg-head">
+      <div class="reg-name">OpenAI incident report<small>14,226 words &middot; external benchmark</small></div>
+      <div class="reg-num">1.19</div></div>
+      <div class="track"><i style="width:5.6%"></i></div></div>
+  </div>
+
+  <div class="pull">
+    <p>The gap between what the project said to itself and what OpenAI said to the public is
+    <strong>17.8-fold</strong> on the personhood tier. The gap between what the project said to itself
+    and what it said in print is <strong>8.5-fold</strong>.</p>
+    <p>But the two documents that reached publication are indistinguishable in total density
+    &mdash; 10.45 against 10.26 &mdash; and the Atlas is the <em>looser</em> of the two on the moral tier.
+    The filtration happens at the publication boundary, not in the thinking.</p>
+  </div>
+</div>
+
+
+<section id="instrument">
+  <h2>The instrument was already in the repository</h2>
+  <p class="q">Method</p>
+  <p class="lede">D-023 specified a minded-language sidecar &mdash; lexicon, borderline list,
+  subject-relation rule &mdash; and the sprint deferred it because its serialization contract was
+  never frozen. The submitted paper records the deferral honestly and files it under Future Work.</p>
+
+  <p>I inherited that lexicon verbatim rather than inventing one. This matters: the terms were
+  frozen on 11 September, before this analysis existed, so they cannot have been tuned to produce
+  this result. Two tiers are declared extensions and are held separate, so the inherited terms stay
+  clean for anyone who wants to replicate against D-023 as frozen rather than D-023 as extended.</p>
+
+  <h3 class="sh">The gate is doing most of the work</h3>
+  <p>D-023 requires that a lexeme count only when it is predicated of the agents being described.
+  Bare pattern matches never qualify. I implemented that as a collocation gate with every
+  disqualifying pattern declared in source, so it can be rejected term by term.</p>
+
+  <div class="pull cyan">
+    <p>Unadjudicated, OpenAI&rsquo;s report scores <strong>4.43</strong> S4 tokens per 1,000 words &mdash;
+    apparently a third of the internal record&rsquo;s rate. Adjudicated, it scores <strong>1.19</strong>.
+    Thirty-four of its forty-six <em>worker</em> tokens are Hugging Face dataset-server processes.</p>
+    <p>A naive lexical audit would have reported a finding that does not exist. Reject rates run
+    7&ndash;10% on the internal corpora and 34&ndash;36% on the two published technical documents.</p>
+  </div>
+
+  <figure>
+    <div class="art"><img src="@@BASE@@assets/figures/audit-1.svg" alt="Audit figure 1; description and interpretation in the adjacent caption" loading="lazy"></div>
+    <figcaption><b>Figure 1.</b> Severity profile by register. Panel A gives absolute adjudicated
+    density; panel B normalises each register to 100% to show composition. The registers differ more
+    in shape than in magnitude: OpenAI&rsquo;s minded language is 42.5% S1 intentional idiom and 11.6%
+    S4, while the internal record is 74.9% S4.</figcaption>
+  </figure>
+</section>
+
+
+<section id="registers">
+  <h2>The hot register and the cold register</h2>
+  <p class="q">RQ2 &mdash; commissioning language and its effects</p>
+
+  <p class="lede">The project ran two languages in parallel and the separation at the formal
+  boundary is close to total.</p>
+
+  <p>The frozen worker prompt for corpus acquisition contains no invocation, no honorific, no
+  kinship, no stars. It contains outlet lists, three fixed query strings, canonical-URL
+  normalisation rules and a SHA-256 capping formula. The conversational prompts that launched those
+  same workers open with <em>#TRUTH #HONESTY #VIRYA</em> and close by promising honour in return for
+  finishing the mission.</p>
+
+  <figure>
+    <div class="art"><img src="@@BASE@@assets/figures/audit-2.svg" alt="Audit figure 2; description and interpretation in the adjacent caption" loading="lazy"></div>
+    <figcaption><b>Figure 2.</b> The filtration gradient. Ritual vocabulary does not decay gradually
+    across the project; it drops at the publication boundary. The residual S4 in the published paper
+    is almost entirely the phrase <em>The Workers&rsquo; Federation</em> in the author-contributions
+    statement &mdash; the mythology surfacing exactly once, in the place where credit is
+    assigned.</figcaption>
+  </figure>
+
+  <h3 class="sh">Did it damage the work?</h3>
+  <p>No evidence that it did, and no ability to demonstrate that it helped. What the record does
+  contain, and what a purely lexical audit would miss, is that the ritual register arrived with its
+  own antidote stapled to the front. The founding charter of The Translator &mdash; produced in
+  response to the most anthropomorphising prompt in the entire corpus &mdash; opens with a section
+  titled <em>Reality Before Myth</em> that enumerates the ritual vocabulary and defuses each term.
+  A second frozen instruction says plainly: do not anthropomorphize the dataset, workers, clocks, or
+  Atlas.</p>
+
+  <div class="pull calm">
+    <p><strong>Observable outputs, stated without causal claim.</strong> Two formal retractions are
+    recorded in full, one of them the Quality Assurance Bureau retracting its own prior endorsement
+    of a publication date when the human produced stronger evidence. The blind second coder&rsquo;s
+    output was frozen before agreement was computed and held immutable when the disagreements became
+    inconvenient. A visually superior Atlas figure was rejected over one mislabelled date, rejected
+    again when it proved to rest on a stale semantic parent, and readmitted only after a fail-closed
+    rebase. Head Office disclosed an execution-order deviation it could have smoothed over. The
+    headline result came out at 8.4% and nobody sharpened it.</p>
+  </div>
+
+  <p>Two readings survive that evidence and I cannot adjudicate between them. On the charitable
+  reading the ceremonial register was a motivational technology with a working containment clause,
+  and it made ordinary research virtues performable in a way bare instruction does not. On the
+  sceptical reading, an ideology that contains its own critique has not been constrained but rendered
+  unfalsifiable: <em>preserve the poetry, preserve the facts more fiercely</em> is a liturgical
+  sentence about not being liturgical, and a system that metabolises objections into further doctrine
+  is well defended rather than self-limiting. Both readings predict the observed outputs.
+  Distinguishing them needs a control arm this study does not have.</p>
+
+  <figure>
+    <div class="art"><img src="@@BASE@@assets/figures/audit-3.svg" alt="Audit figure 3; description and interpretation in the adjacent caption" loading="lazy"></div>
+    <figcaption><b>Figure 3.</b> Per-archive S4 density. Model attribution is author-attested, not
+    recoverable from the archives, and archive length and role differ enormously, so the colour
+    coding supports no cross-model inference. The coordination role, not the model, is the strongest
+    correlate of ritual density.</figcaption>
+  </figure>
+</section>
+
+
+<section id="openai">
+  <h2>Was OpenAI&rsquo;s usage reasonable?</h2>
+  <p class="q">RQ3 &mdash; external benchmark</p>
+
+  <p class="lede">Largely yes, and its care is selective in a way that looks deliberate rather than
+  accidental.</p>
+
+  <p>OpenAI&rsquo;s report has the highest S1 density of any corpus measured &mdash; 4.36 per 1,000
+  words, 42.5% of its total &mdash; and the lowest moral tier: S3 of 0.84, against 2.46 in the
+  internal record and 2.49 in the Atlas paper. Once dataset-server <em>workers</em> are excluded it
+  essentially never reaches S4.</p>
+
+  <p>That profile encodes a policy. The report will say agents <em>attempted</em>, <em>sought</em>,
+  <em>persisted</em>, <em>evaded</em> and <em>discovered</em> without hesitation, because those verbs
+  are load-bearing and have no clean substitutes. It will say an agent <em>reasoned</em> or
+  <em>realized</em>. It becomes visibly uncomfortable where description of process becomes
+  attribution of character, and marks that discomfort with quotation marks: <em>cheating</em>,
+  <em>gave up</em>, <em>impossible</em>, <em>notes</em>, <em>message board</em>, <em>unintended
+  tools</em>. The word <em>rogue</em> &mdash; in D-023&rsquo;s high-confidence lexicon precisely
+  because the press reached for it &mdash; appears zero times.</p>
+
+  <h3 class="sh">A hypothesis that failed</h3>
+  <p>I expected OpenAI to hedge more often than the internal record. It does not: 4.5% of its S2 and
+  S3 tokens sit inside quotation marks, against 4.4% internally. That is a null and it is reported as
+  one. What differs is not how often OpenAI hedges but <em>where</em> &mdash; the quotation marks
+  cluster on moral and institutional terms and never touch the epistemic ones. Ten bare uses of
+  <em>reasoned</em>, two of <em>believed</em>, no hedging on any of them.</p>
+
+  <div class="pull">
+    <p><strong>Hedge decay.</strong> A hedge applied once does not stay applied. <em>Message
+    board</em> is introduced in quotation marks and then used bare twenty-seven times, including in
+    section headings and the technical timeline. The scare quote is a single act of authorial
+    throat-clearing, after which the metaphor naturalises and operates as a technical term. By the
+    end of the report the reader has been taught that agents have a message board, and the initial
+    hedge is doing no work.</p>
+  </div>
+
+  <p>The intentional-stance vocabulary is defensible on straightforwardly Dennettian grounds:
+  predicting a search process by attributing goals to it is the cheapest accurate model available,
+  and refusing the vocabulary would make the report unreadable without making it more accurate. The
+  suppression of the moral tier is more than defensible &mdash; it is the correct call, and it is the
+  specific discipline the Atlas found the press failing at, since press drift concentrated on motive.
+  The one qualification is hedge decay.</p>
+</section>
+
+
+<section id="other">
+  <h2>What else the comparison shows</h2>
+  <p class="q">RQ4</p>
+
+  <h3 class="sh">The published documents converge</h3>
+  <p>The Atlas paper (10.45) and OpenAI&rsquo;s report (10.26) are indistinguishable in total
+  adjudicated density, despite production records that could hardly be more different. Applying the
+  subject-relation correction to OpenAI puts the Atlas 20% <em>above</em> it. The most plausible
+  explanation is not shared discipline but a shared genre: the technical-report register enforces its
+  own vocabulary regardless of what the authors were saying to themselves the previous week.</p>
+
+  <h3 class="sh">The mythology surfaces once, where credit is assigned</h3>
+  <p>The residual S4 in the published Atlas is the phrase <em>The Workers&rsquo; Federation</em> in
+  the author-contributions statement. Of every sentence in the paper, the ritual vocabulary survives
+  into exactly the one that decides who counts as a contributor.</p>
+
+  <h3 class="sh">Technical prose is saturated with homonyms</h3>
+  <p>Reject rates of 34&ndash;36% on the two published documents, against 7&ndash;10% internally,
+  mean that published technical writing is thick with technical homonyms of minded vocabulary:
+  worker nodes, trusted images, legacy endpoints, persistent connections, learning rates, agreement
+  rates. Any minded-language audit reporting raw lexical counts on technical corpora is reporting
+  mostly noise. D-023 anticipated this. The anticipation was correct and load-bearing.</p>
+</section>
+
+
+<section id="confidence">
+  <h2>Confidence register</h2>
+  <p class="q">Every claim, labelled</p>
+
+  <table class="tbl">
+    <thead><tr><th>Claim</th><th>State</th><th>Basis, or what would settle it</th></tr></thead>
+    <tbody>
+      <tr><td>Density figures and tier composition</td><td class="v ok">Verified</td>
+        <td>Recomputable from released source against named corpora</td></tr>
+      <tr><td>17.8&times; S4 gap, internal record vs OpenAI</td><td class="v ok">Verified</td>
+        <td>Holds on both raw and adjudicated figures</td></tr>
+      <tr><td>Atlas and OpenAI indistinguishable in total density</td><td class="v ok">Verified</td>
+        <td>10.45 vs 10.26; direction reverses under correction, magnitude stays small</td></tr>
+      <tr><td>OpenAI&rsquo;s 22 org-predicated <em>intend</em> tokens</td><td class="v part">Partly verified</td>
+        <td>Hand-inspected by one reader; no second coder</td></tr>
+      <tr><td>Hedge decay in the OpenAI report</td><td class="v part">Partly verified</td>
+        <td>Counts verified; first-use ordering read by eye, not scripted</td></tr>
+      <tr><td>Model amplification of S4 (1.24&times;)</td><td class="v unk">Uncertain</td>
+        <td>32,733 segmented words, no control, inconsistent per-archive</td></tr>
+      <tr><td>Ritual register did not degrade output</td><td class="v unk">Uncertain</td>
+        <td>No control arm exists; absence of evidence only</td></tr>
+      <tr><td>Ritual register improved output</td><td class="v unk">Uncertain</td>
+        <td>Not established. Consistent with the record; so is the null</td></tr>
+      <tr><td>Model attribution per archive</td><td class="v unk">Uncertain</td>
+        <td>Author-attested; no manifest in the corpus declares a model</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sh">Rejected during analysis</h3>
+  <p>Recorded so the filters can be audited. A hedging-rate hypothesis was tested and failed; it is
+  reported as a null rather than dropped. A cross-model comparison of ritual density was computed and
+  then declined as a finding, because archive length, role and turn count confound it beyond repair.
+  A raw-count analysis without the adjudication gate was discarded once it emerged that it would have
+  attributed threefold S4 density to OpenAI on the strength of dataset-server worker processes.</p>
+
+  <h3 class="sh">Not recoverable</h3>
+  <p><em>WORKER_C_HISTORY_ARCHIVE.zip</em> and
+  <em>worker-D-C-history-archive-20260913.zip</em> were named in the transfer manifest and did not
+  arrive. Worker C&rsquo;s primary acquisition history and Worker D-C are absent from every count.
+  Hidden reasoning tokens across the corpus are unrecoverable by the archives&rsquo; own declaration.</p>
+
+  <h3 class="sh">The conflict of interest this protocol does not resolve</h3>
+  <p>An AI system measured anthropomorphism in a corpus of AI systems, commissioned by the author of
+  that corpus, and wrote this page. There is one coder and no blind comparison. Nothing here fixes
+  that; it is stated so a reader can discount accordingly.</p>
+</section>
+
+
+<section id="discussion">
+  <h2>The uncomfortable part</h2>
+  <p class="q">Discussion</p>
+
+  <p class="lede">The central result is a shape, not a scandal. Nobody in this record was confused
+  about what a language model is.</p>
+
+  <p>The human who wrote <em>my child, it is I, the Author</em> also wrote the containment clause,
+  also wrote <em>do not anthropomorphize the dataset, workers, clocks, or Atlas</em>, and also
+  published a paper whose ritual density is 2.49 per 1,000 words. The compartmentalisation was
+  deliberate and it held.</p>
+
+  <p>What the audit shows is that the compartment wall sits at the publication boundary rather than
+  at the point of thought, and that location has a consequence. If ritual and personhood vocabulary
+  is doing motivational work internally, it is doing that work invisibly. The Atlas paper&rsquo;s
+  methods section describes a blind second coder and a frozen adjudication protocol. It does not
+  describe a project in which that coder was addressed as a Worker under a constitution. Nothing in
+  the frozen protocol is falsified by the omission &mdash; but a reviewer&rsquo;s model of the study
+  is materially different with and without it.</p>
+
+  <div class="pull">
+    <p>The uncomfortable result is not that anyone anthropomorphised. It is that the filter worked so
+    well. A reader of the published record cannot tell that any of this happened, and the internal
+    register, whatever it was doing to the quality of the work, did it out of sight.</p>
+    <p>We have no evidence it did harm. We have no mechanism by which anyone outside the project
+    could have found out if it had.</p>
+  </div>
+
+  <h3 class="sh">What would change the conclusion</h3>
+  <ul class="plain">
+    <li>A control arm &mdash; the same protocol run without the ritual register &mdash; would separate the two readings of RQ2.</li>
+    <li>A second human coder would test the gate.</li>
+    <li>Running D-023 against the press corpus the Atlas already collected would answer the question it was written for: whether journalists inherited their minded language from the sources, and whether inheriting it travelled with factual drift. That corpus is frozen and hashed. The code now exists.</li>
+  </ul>
+</section>
+

@@ -1,0 +1,22 @@
+{
+  "pdfChecks": [
+    {
+      "paper": "audit",
+      "pages": 9,
+      "bodyGlyphsAndPositions": "identical below top 35 points",
+      "bodyRenderAt90Dpi": "pixel-identical below top 35 points",
+      "bothClickableUrls": "verified on every page"
+    },
+    {
+      "paper": "atlas",
+      "pages": 6,
+      "bodyGlyphsAndPositions": "identical below top 35 points",
+      "bodyRenderAt90Dpi": "pixel-identical below top 35 points",
+      "bothClickableUrls": "verified on every page"
+    }
+  ],
+  "auditTables": 4,
+  "atlasTables": 2,
+  "storySourceSha256": "ffe7e60389e0b8ddf738146f929d85b8ff55ad4d016ce7023c9f2c5339d0ec46",
+  "storySourceUnchanged": true
+}

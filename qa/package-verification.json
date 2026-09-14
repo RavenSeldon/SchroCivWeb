@@ -1,0 +1,6 @@
+{
+  "sourceZipFreshBuild": "PASS",
+  "outputFilesMatched": 80,
+  "deploymentZipIntegrity": "PASS",
+  "note": "Extracted source archive rebuilt using the installed pinned dependencies; every output file matched the delivered dist bytes."
+}

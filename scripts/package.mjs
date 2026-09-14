@@ -1,0 +1,14 @@
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {zip} from './zip.mjs';
+const walk=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(f=>f.isDirectory()?walk(path.join(p,f.name)):[path.join(p,f.name)]);
+if(!fs.existsSync('dist/index.html'))throw Error('Run npm run build first');
+fs.mkdirSync('release',{recursive:true});
+const deploy=walk('dist').map(p=>({name:path.relative('dist',p),data:fs.readFileSync(p)}));
+zip(deploy,'release/schrodingers-civilization-deploy.zip');
+const roots=['src','scripts','docs'];let files=roots.flatMap(walk);
+files.push('README.md','package.json','package-lock.json','.nvmrc','.gitignore','requirements-preparation.txt');
+files.push(...walk('qa').filter(p=>(!p.startsWith('qa/source/')||p.endsWith('.json'))));
+files=files.filter(p=>!p.endsWith('.DS_Store'));
+zip(files.map(p=>({name:p,data:fs.readFileSync(p)})),'release/schrodingers-civilization-source.zip');
+const hashes=fs.readdirSync('release').filter(p=>p.endsWith('.zip')).sort().map(p=>`${crypto.createHash('sha256').update(fs.readFileSync('release/'+p)).digest('hex')}  ${p}`);
+fs.writeFileSync('release/SHA256SUMS.txt',hashes.join('\n')+'\n');
+console.log(hashes.join('\n'));

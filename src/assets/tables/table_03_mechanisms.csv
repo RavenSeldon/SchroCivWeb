@@ -1,0 +1,5 @@
+mechanism,direction,n,named_frozen_distinctions
+K1-CONFLATION,NEUTRAL_MIXED,2,C1-P07 / OpenAI-internal attackers ≠ Hugging Face attackers; approximate ≠ exact | C4-P06 / one discrete “escape moment” ≠ the full months-long sequence
+K1-POPULATION,AMPLIFYING,1,C1-P02 / action/event count ≠ agent count; approximate ≠ exact;
+K3-SCOPE_CERTAINTY_SHIFT,AMPLIFYING,2,C2-P05 / observed behavior ≠ inferred subjective motive | C2-P05 / observed behavior ≠ inferred subjective motive; general reward hacking / cheating ≠ one specific strategy; primary motive ≠ subsidiary motive; remains a qualified inference
+K3-SCOPE_CERTAINTY_SHIFT,NEUTRAL_MIXED,2,C2-P02/C2-P04/C2-P05 — inferred/qualified motive ≠ categorical subjective motive; earlier answer/solution framing remains qualified | C2-P05 / observed behavior ≠ inferred subjective motive; general reward hacking / cheating ≠ one specific strategy; searching for answers/flags ≠ understanding/tampering with scorer implementation; remains a qualified inference

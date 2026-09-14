@@ -1,0 +1,9 @@
+node_modules/
+dist/
+release/
+handoff/
+qa/source/
+qa/screenshots/
+.DS_Store
+*.log
+.venv/

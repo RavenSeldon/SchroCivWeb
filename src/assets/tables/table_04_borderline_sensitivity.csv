@@ -1,0 +1,4 @@
+variant,drift_n,denominator_n,pct
+lower_borderline_as_nondrift,7,83,8.4
+upper_borderline_as_drift,9,83,10.8
+adjudicated_best_estimate,7,83,8.4

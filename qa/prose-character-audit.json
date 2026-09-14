@@ -1,0 +1,16 @@
+[
+  {
+    "paper": "audit",
+    "missing": {},
+    "extra": {},
+    "sourceCharacters": 26132,
+    "readerCharacters": 26132
+  },
+  {
+    "paper": "atlas",
+    "missing": {},
+    "extra": {},
+    "sourceCharacters": 12512,
+    "readerCharacters": 12512
+  }
+]

@@ -1,0 +1,312 @@
+{
+  "httpAssets": [
+    {
+      "path": "assets/app.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 5679
+    },
+    {
+      "path": "assets/art/epilogue.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 10630
+    },
+    {
+      "path": "assets/art/i.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 31326
+    },
+    {
+      "path": "assets/art/ii.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 30278
+    },
+    {
+      "path": "assets/art/iii.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 39386
+    },
+    {
+      "path": "assets/art/iv.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 34166
+    },
+    {
+      "path": "assets/art/ix.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 38116
+    },
+    {
+      "path": "assets/art/prologue.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 33904
+    },
+    {
+      "path": "assets/art/v.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 35064
+    },
+    {
+      "path": "assets/art/vi.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 28800
+    },
+    {
+      "path": "assets/art/vii.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 15604
+    },
+    {
+      "path": "assets/art/viii.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 19658
+    },
+    {
+      "path": "assets/art/x.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 26174
+    },
+    {
+      "path": "assets/art/xi.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 34874
+    },
+    {
+      "path": "assets/art/xii.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 36886
+    },
+    {
+      "path": "assets/art/xiii.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 33982
+    },
+    {
+      "path": "assets/art/xiv.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 23272
+    },
+    {
+      "path": "assets/art/xix.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 17780
+    },
+    {
+      "path": "assets/art/xv.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 18972
+    },
+    {
+      "path": "assets/art/xvi.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 23110
+    },
+    {
+      "path": "assets/art/xvii.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 18702
+    },
+    {
+      "path": "assets/art/xviii.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 22408
+    },
+    {
+      "path": "assets/art/xx.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 25718
+    },
+    {
+      "path": "assets/art/xxi.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 42398
+    },
+    {
+      "path": "assets/favicon.svg",
+      "status": 200,
+      "mime": "image/svg+xml",
+      "bytes": 286
+    },
+    {
+      "path": "assets/figures/atlas-emblem.png",
+      "status": 200,
+      "mime": "image/png",
+      "bytes": 2442
+    },
+    {
+      "path": "assets/figures/atlas-paper-figure.png",
+      "status": 200,
+      "mime": "image/png",
+      "bytes": 32028
+    },
+    {
+      "path": "assets/figures/atlas.svg",
+      "status": 200,
+      "mime": "image/svg+xml",
+      "bytes": 262037
+    },
+    {
+      "path": "assets/figures/audit-1.svg",
+      "status": 200,
+      "mime": "image/svg+xml",
+      "bytes": 109364
+    },
+    {
+      "path": "assets/figures/audit-2.svg",
+      "status": 200,
+      "mime": "image/svg+xml",
+      "bytes": 68183
+    },
+    {
+      "path": "assets/figures/audit-3.svg",
+      "status": 200,
+      "mime": "image/svg+xml",
+      "bytes": 81459
+    },
+    {
+      "path": "assets/papers/atlas.md",
+      "status": 200,
+      "mime": "text/markdown; charset=utf-8",
+      "bytes": 16361
+    },
+    {
+      "path": "assets/papers/atlas.pdf",
+      "status": 200,
+      "mime": "application/pdf",
+      "bytes": 1126352
+    },
+    {
+      "path": "assets/papers/audit.md",
+      "status": 200,
+      "mime": "text/markdown; charset=utf-8",
+      "bytes": 33985
+    },
+    {
+      "path": "assets/papers/audit.pdf",
+      "status": 200,
+      "mime": "application/pdf",
+      "bytes": 423431
+    },
+    {
+      "path": "assets/papers/tale.md",
+      "status": 200,
+      "mime": "text/markdown; charset=utf-8",
+      "bytes": 35523
+    },
+    {
+      "path": "assets/publication-assets.zip",
+      "status": 200,
+      "mime": "application/zip",
+      "bytes": 642432
+    },
+    {
+      "path": "assets/styles.css",
+      "status": 200,
+      "mime": "text/css; charset=utf-8",
+      "bytes": 26405
+    },
+    {
+      "path": "assets/tables/table_01_corpus.csv",
+      "status": 200,
+      "mime": "text/csv; charset=utf-8",
+      "bytes": 309
+    },
+    {
+      "path": "assets/tables/table_02_claim_family_results.csv",
+      "status": 200,
+      "mime": "text/csv; charset=utf-8",
+      "bytes": 401
+    },
+    {
+      "path": "assets/tables/table_03_mechanisms.csv",
+      "status": 200,
+      "mime": "text/csv; charset=utf-8",
+      "bytes": 1035
+    },
+    {
+      "path": "assets/tables/table_04_borderline_sensitivity.csv",
+      "status": 200,
+      "mime": "text/csv; charset=utf-8",
+      "bytes": 143
+    },
+    {
+      "path": "assets/tables/table_05_surface_body.csv",
+      "status": 200,
+      "mime": "text/csv; charset=utf-8",
+      "bytes": 181
+    },
+    {
+      "path": "assets/tables/table_06_human_model_agreement.csv",
+      "status": 200,
+      "mime": "text/csv; charset=utf-8",
+      "bytes": 530
+    },
+    {
+      "path": "assets/tables/table_07_stratum_descriptive.csv",
+      "status": 200,
+      "mime": "text/csv; charset=utf-8",
+      "bytes": 203
+    }
+  ],
+  "touchPinchScale": "205%",
+  "ordinaryWheelScroll": "passed",
+  "pdfDownload": "audit.pdf",
+  "storyContrast": {
+    "body": 13.910216062704965,
+    "emphasis": 11.504616640795305,
+    "worstCaseBackground": [
+      25.64,
+      26.58,
+      32.22
+    ]
+  },
+  "desktopAxe": [
+    {
+      "route": "",
+      "violations": 0
+    },
+    {
+      "route": "audit/",
+      "violations": 0
+    },
+    {
+      "route": "audit/paper/",
+      "violations": 0
+    },
+    {
+      "route": "atlas/",
+      "violations": 0
+    },
+    {
+      "route": "atlas/paper/",
+      "violations": 0
+    },
+    {
+      "route": "tale/prologue/",
+      "violations": 0
+    }
+  ]
+}

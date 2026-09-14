@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "htmlRoutes": 31,
+  "assetHashes": 46,
+  "checks": [
+    "GET and HEAD routes",
+    "exact static bytes",
+    "root route unaffected",
+    "trailing slash and query preservation",
+    "publication 404",
+    "path traversal and symlink escape rejected",
+    "both hostnames",
+    "missing installation 503"
+  ],
+  "isolation": "Fresh Flask app with only the supplied blueprint; no blog import, database, model or migration access."
+}
