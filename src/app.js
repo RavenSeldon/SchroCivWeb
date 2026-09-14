@@ -40,3 +40,40 @@ const progress=document.querySelector('.reading-progress span');
 if(progress){let scheduled=false;const tick=()=>{progress.style.width=(Math.min(1,window.scrollY/Math.max(1,document.documentElement.scrollHeight-window.innerHeight))*100)+'%';scheduled=false;};window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(tick);}},{passive:true});tick();
  document.addEventListener('keydown',e=>{if(!e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||document.querySelector('dialog[open]')||getSelection()?.toString()||e.target.closest('input,textarea,select,[contenteditable]'))return;const next=e.key==='ArrowRight'?'next':e.key==='ArrowLeft'?'prev':null;const a=next&&document.querySelector(`.chapter-pagination a[rel="${next}"]`);if(a){e.preventDefault();location.assign(a.href);}});
 }
+
+/* Tale soundtrack. One playlist shared across chapters: position and play-state
+   live in sessionStorage, so turning a chapter resumes rather than restarts.
+   Nothing here runs unless the build emitted a player, which it only does when
+   src/assets/audio/ contains files. First play always needs a click — browsers
+   refuse to start audio otherwise — but later chapters resume on their own once
+   the origin has earned media engagement. */
+const taleBtn=document.querySelector('.tale-audio'),taleEl=document.querySelector('.tale-audio-el');
+if(taleBtn&&taleEl){
+ const tracks=JSON.parse(taleBtn.dataset.tracks||'[]'),KEY='tale-audio';
+ const read=()=>{try{return JSON.parse(sessionStorage.getItem(KEY))||{};}catch{return {};}};
+ const prior=read();
+ let index=Number.isInteger(prior.i)&&tracks[prior.i]?prior.i:0;
+ const save=()=>{try{sessionStorage.setItem(KEY,JSON.stringify({i:index,t:taleEl.currentTime,playing:!taleEl.paused}));}catch{}};
+ const reflect=()=>{const on=!taleEl.paused;taleBtn.setAttribute('aria-pressed',String(on));taleBtn.setAttribute('aria-label',on?'Pause background music':'Play background music');};
+ const start=()=>taleEl.play().then(reflect,reflect);
+ taleEl.volume=0.4;            // background bed, not foreground; adjust to taste
+ taleEl.loop=tracks.length===1; // a lone track loops gaplessly; a playlist advances below
+ // Bandwidth: a reader who never presses play must not pay for the file. Only
+ // preload when we are actually resuming a session already in progress; a first
+ // click triggers the fetch on its own.
+ const resuming=!!prior.playing;
+ taleEl.preload=resuming?'auto':'none';
+ if(tracks[index]&&taleEl.getAttribute('src')!==tracks[index])taleEl.src=tracks[index];
+ const seek=prior.t>0?prior.t:0;
+ // currentTime cannot be set before metadata exists, so seek once it does --
+ // and when resuming, seek BEFORE starting, or the track blips from zero.
+ const seekThen=after=>taleEl.addEventListener('loadedmetadata',()=>{if(seek&&seek<taleEl.duration)taleEl.currentTime=seek;after&&after();},{once:true});
+ taleBtn.addEventListener('click',()=>{taleEl.paused?start():(taleEl.pause(),reflect());save();});
+ taleEl.addEventListener('ended',()=>{index=(index+1)%tracks.length;taleEl.src=tracks[index];start();save();});
+ taleEl.addEventListener('play',reflect);
+ taleEl.addEventListener('pause',reflect);
+ addEventListener('pagehide',save);
+ setInterval(save,4000);
+ if(resuming){seek?seekThen(start):start();}else if(seek){seekThen();}
+ reflect();
+}

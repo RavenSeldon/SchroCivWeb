@@ -192,3 +192,34 @@ curl -sI https://www.benamuwo.me/schrodingers_civ/ | head -1     # 200 -- public
 `blueprint.name` down to a bare `name`. An endpoint called `index` anywhere
 would steal `url_for('index')` from the homepage and break the nav link on every
 page. This is why the publication's endpoints are prefixed `schrociv_`.
+
+---
+
+## C. Adding or changing the Tale soundtrack
+
+Drop `.mp3`, `.m4a`, `.aac` or `.ogg` files into `src/assets/audio/`. That is the
+whole interface. The build scans the folder and:
+
+- emits a star toggle on the 23 chapter pages (nowhere else) when files exist;
+- emits **nothing at all** when the folder holds no tracks;
+- plays tracks in filename order, wrapping at the end; a single file loops;
+- publishes only accepted tracks — the README and any rejected names stay local.
+
+Name files with letters, digits, dots, dashes and underscores. No spaces: the
+build refuses them by name and says so, because a space produces a URL that
+`npm run check` cannot resolve.
+
+Playback position and play-state ride in `sessionStorage`, so turning a chapter
+resumes rather than restarts. The first play always needs a click — browsers
+refuse to start audio otherwise — and later chapters resume on their own once the
+browser has granted the origin media engagement. Where it does not, the star
+simply shows as paused.
+
+Volume defaults to 40%. Change `taleEl.volume` in `src/app.js`.
+
+Then deploy exactly as in section A. No blog change and no restart.
+
+**One-time prerequisite, already done:** audio MIME types were added to
+`app/routes/schrodingers_civ/views.py` in the blog repo. Without them the global
+`nosniff` header makes browsers refuse the file with no useful error. That change
+ships via section B (blog `git pull` + HUP) and only needs doing once.
