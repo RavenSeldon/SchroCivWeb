@@ -6,8 +6,6 @@
 
 <!-- source-page: 1 -->
 
-
-
 A Preregistered Two-Clock Audit of Claim Drift in Coverage of the July 2026 OpenAI-Hugging Face Incident
 
 Ben Amuwo
@@ -161,16 +159,5 @@ The project studies how technical distinctions survive public communication afte
 
 ## LLM Usage Statement
 
-LLM systems materially assisted the project across acquisition support, tooling, blind-model coding, adjudication support, analysis engineering, visualization, quality assurance, verification, and drafting. The blind-model comparison was deliberately separated from human coding and used frozen inputs without access to human labels or aggregate results. Reported statistics were checked against frozen project outputs. The human researcher will review, edit as needed, and approve the final submission and is responsible for its claims.
-
-## Author Review Items Before Final Submission
-
-- Confirm the exact frozen D-001 wording if the final manuscript is intended to quote it verbatim.
-
-
-- Insert the final project website URL after Author approval.
-
-- Confirm whether any verified reach/playtest evidence exists and host it on the project website if appropriate.
-
-- Read the full document, revise wording where needed, and explicitly approve the final prose.
+LLM systems materially assisted the project across acquisition support, tooling, blind-model coding, adjudication support, analysis engineering, visualization, quality assurance, verification, and drafting. The blind-model comparison was deliberately separated from human coding and used frozen inputs without access to human labels or aggregate results. Reported statistics were checked against frozen project outputs. The human researcher has reviewed and approved the final submission and is responsible for its claims.
 
