@@ -12,3 +12,4 @@ html:not(.js) .atlas-viewer button,html:not(.js) .art-open,html:not(.js) .viewer
 
 /* Landing seal only: retain the full vector and its original colours. */
 .hero-art img.hero-seal{object-fit:contain;background:#000;filter:none}
+img.brand-symbol{width:42px;height:42px}@media(max-width:600px){img.brand-symbol{width:34px;height:34px}}
