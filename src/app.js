@@ -43,20 +43,30 @@ let progressEl=document.querySelector('.reading-progress span');
 
 /* Tale soundtrack. The player is emitted outside #page-shell, so the chapter
    swap below never touches it: one <audio> element serves the whole read and the
-   sound is continuous across chapter turns. sessionStorage still carries the
-   position, but only as a fallback for a hard load — a reload, or landing on a
-   chapter directly. Nothing is emitted at all unless src/assets/audio/ has files. */
+   sound is continuous across chapter turns. Storage carries the position across
+   a hard load — a reload, landing on a chapter directly, or leaving and coming
+   back. Nothing is emitted at all unless src/assets/audio/ has files. */
 const taleBtn=document.querySelector('.tale-audio'),taleEl=document.querySelector('.tale-audio-el');
 if(taleBtn&&taleEl){
- const tracks=JSON.parse(taleBtn.dataset.tracks||'[]'),KEY='tale-audio',REST=3000;
- const read=()=>{try{return JSON.parse(sessionStorage.getItem(KEY))||{};}catch{return {};}};
- const prior=read();
+ const tracks=JSON.parse(taleBtn.dataset.tracks||'[]'),KEY='tale-audio',REST=3000,GRACE=600000;
+ // Two tiers of memory. sessionStorage is the same-tab record: a reload or a
+ // direct landing resumes exactly, intent included. localStorage is the wider
+ // one -- close the tab, wander off, come back within GRACE (ten minutes) and
+ // the place is still held. Only the position crosses that gap, never the
+ // intent: a fresh document carries no user gesture, so a browser would refuse
+ // to play anyway. The star waits to be pressed, then picks up where it was.
+ const readSession=()=>{try{return JSON.parse(sessionStorage.getItem(KEY))||{};}catch{return {};}};
+ const readLocal=()=>{try{const v=JSON.parse(localStorage.getItem(KEY));
+  return v&&Number.isFinite(v.ts)&&Date.now()-v.ts<=GRACE?{i:v.i,t:v.t}:{};}catch{return {};}};
+ const inTab=readSession(),prior=Number.isInteger(inTab.i)?inTab:readLocal();
  let index=Number.isInteger(prior.i)&&tracks[prior.i]?prior.i:0;
  // wantPlaying is the reader's intent, which outlives the element's paused state:
  // during the rest between the last track and the first the audio is paused, but
  // the star must stay lit and the loop must still resume.
  let wantPlaying=false,restTimer=null;
- const save=()=>{try{sessionStorage.setItem(KEY,JSON.stringify({i:index,t:taleEl.currentTime,playing:wantPlaying}));}catch{}};
+ const save=()=>{const at={i:index,t:taleEl.currentTime};
+  try{sessionStorage.setItem(KEY,JSON.stringify({...at,playing:wantPlaying}));}catch{}
+  try{localStorage.setItem(KEY,JSON.stringify({...at,ts:Date.now()}));}catch{}};
  const reflect=()=>{taleBtn.setAttribute('aria-pressed',String(wantPlaying));taleBtn.setAttribute('aria-label',wantPlaying?'Pause background music':'Play background music');};
  // Light the star on intent, but drop it again if the browser refuses to play,
  // so the control never claims sound that is not happening.
@@ -64,10 +74,12 @@ if(taleBtn&&taleEl){
  const stop=()=>{wantPlaying=false;clearTimeout(restTimer);taleEl.pause();reflect();};
  taleEl.volume=0.4;          // background bed, not foreground; adjust to taste
  taleEl.loop=false;          // the ended handler owns looping, so it can rest
- const resuming=!!prior.playing;
- taleEl.preload=resuming?'auto':'none';   // a reader who never presses play pays nothing
+ const resuming=!!prior.playing,seek=prior.t>0?prior.t:0;
+ // A reader who never presses play pays nothing. One returning to a held
+ // position pays for metadata only, so currentTime is already set when they
+ // press -- without it the track would sound from zero before seeking.
+ taleEl.preload=resuming?'auto':seek?'metadata':'none';
  if(tracks[index]&&taleEl.getAttribute('src')!==tracks[index])taleEl.src=tracks[index];
- const seek=prior.t>0?prior.t:0;
  const seekThen=after=>taleEl.addEventListener('loadedmetadata',()=>{if(seek&&seek<taleEl.duration)taleEl.currentTime=seek;after&&after();},{once:true});
  taleBtn.addEventListener('click',()=>{wantPlaying?stop():start();save();});
  taleEl.addEventListener('ended',()=>{
