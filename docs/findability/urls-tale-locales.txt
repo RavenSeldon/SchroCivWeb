@@ -1,0 +1,10 @@
+# Localized Tale pages. They exist only when TALE_LOCALES_ENABLED is true in
+# scripts/build.mjs. Append these to urls-tale-first.txt (or pass URLS_FILE) after deploying them.
+https://benamuwo.me/schrodingers_civ/tale/fr/
+https://benamuwo.me/schrodingers_civ/tale/es/
+https://benamuwo.me/schrodingers_civ/tale/pt/
+https://benamuwo.me/schrodingers_civ/tale/de/
+https://benamuwo.me/schrodingers_civ/tale/ru/
+https://benamuwo.me/schrodingers_civ/tale/ja/
+https://benamuwo.me/schrodingers_civ/tale/ko/
+https://benamuwo.me/schrodingers_civ/tale/zh-hans/
