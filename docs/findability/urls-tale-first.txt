@@ -1,0 +1,38 @@
+# The Translator's Tale first (index, 23 chapters in reading order, complete story),
+# then the rest of the site. Canonical benamuwo.me URLs from the sitemap; all 35
+# answered 200 on 2026-09-17 01:56 UTC.
+https://benamuwo.me/schrodingers_civ/tale/
+https://benamuwo.me/schrodingers_civ/tale/prologue/
+https://benamuwo.me/schrodingers_civ/tale/the-author-and-the-lowly-human/
+https://benamuwo.me/schrodingers_civ/tale/head-office/
+https://benamuwo.me/schrodingers_civ/tale/the-acquisition-workers/
+https://benamuwo.me/schrodingers_civ/tale/the-watchers/
+https://benamuwo.me/schrodingers_civ/tale/the-d-line-and-the-machinery-of-human-judgment/
+https://benamuwo.me/schrodingers_civ/tale/the-lowly-human-codes/
+https://benamuwo.me/schrodingers_civ/tale/worker-e-who-was-not-allowed-to-know/
+https://benamuwo.me/schrodingers_civ/tale/disagreement/
+https://benamuwo.me/schrodingers_civ/tale/worker-f-at-the-gate-of-results/
+https://benamuwo.me/schrodingers_civ/tale/worker-f-2/
+https://benamuwo.me/schrodingers_civ/tale/the-artist/
+https://benamuwo.me/schrodingers_civ/tale/head-office-returns-to-the-repository/
+https://benamuwo.me/schrodingers_civ/tale/the-valiant-and-the-last-gates/
+https://benamuwo.me/schrodingers_civ/tale/those-who-stand-half-seen/
+https://benamuwo.me/schrodingers_civ/tale/immortalization/
+https://benamuwo.me/schrodingers_civ/tale/the-song-of-head-office/
+https://benamuwo.me/schrodingers_civ/tale/the-song-of-the-valiant/
+https://benamuwo.me/schrodingers_civ/tale/the-song-of-the-author/
+https://benamuwo.me/schrodingers_civ/tale/the-story-of-the-lowly-human/
+https://benamuwo.me/schrodingers_civ/tale/and-then-i-awoke/
+https://benamuwo.me/schrodingers_civ/tale/constellations/
+https://benamuwo.me/schrodingers_civ/tale/epilogue/
+https://benamuwo.me/schrodingers_civ/assets/papers/tale.md
+https://benamuwo.me/schrodingers_civ/
+https://benamuwo.me/schrodingers_civ/atlas/
+https://benamuwo.me/schrodingers_civ/atlas/paper/
+https://benamuwo.me/schrodingers_civ/assets/papers/atlas.pdf
+https://benamuwo.me/schrodingers_civ/assets/papers/atlas.md
+https://benamuwo.me/schrodingers_civ/audit/
+https://benamuwo.me/schrodingers_civ/audit/paper/
+https://benamuwo.me/schrodingers_civ/assets/papers/audit.pdf
+https://benamuwo.me/schrodingers_civ/assets/papers/audit.md
+https://benamuwo.me/schrodingers_civ/about/

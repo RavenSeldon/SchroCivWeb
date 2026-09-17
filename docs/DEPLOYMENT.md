@@ -8,7 +8,7 @@ The package is ready for static hosting. Nothing has been published, pushed or c
 
 The existing repository is `https://github.com/RavenSeldon/beamu-blog.git`. Within that checkout the Flask application is under **`WebDev/Blog/`**. Its `Procfile` launches `gunicorn wsgi:app`, and `wsgi.py` calls the application factory. These facts were checked by reading the entry-point files and Git remote only; the app was not started or imported.
 
-Both `benamuwo.me` and `www.benamuwo.me` belong to the existing site. The new publication's canonical URL remains **https://www.benamuwo.me/schrodingers_civ/**.
+Both `benamuwo.me` and `www.benamuwo.me` belong to the existing site. The publication's canonical URL was **https://www.benamuwo.me/schrodingers_civ/** when this guide was written; since 2026-09-17 it is **https://benamuwo.me/schrodingers_civ/**. Guidance below that assumes a `www` canonical predates that change.
 
 **Direct-static deployment boundary:** serve the publication's static files at the web-server / ingress layer, alongside the existing Flask upstream. Do not add Flask routes, modify the application factory or templates, put this package in the blog's uploads directory, restart Gunicorn, or run the application's deployment/startup scripts for this task. No database connection, SQL command, migration command, schema change or model change is needed. The database, migrations, models, configuration secrets and application files are outside this deployment.
 

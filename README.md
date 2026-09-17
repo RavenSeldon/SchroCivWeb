@@ -50,7 +50,7 @@ The publication is live at <https://www.benamuwo.me/schrodingers_civ/>, served b
 
 ## Editing
 
-Change interface styles in `src/styles.css` and small interactions in `src/app.js`; shared page composition lives in `scripts/build.mjs`. Run build and the relevant checks afterward. The canonical base is deliberately fixed to `/schrodingers_civ/` with `www` in canonical URLs.
+Change interface styles in `src/styles.css` and small interactions in `src/app.js`; shared page composition lives in `scripts/build.mjs`. Run build and the relevant checks afterward. The canonical base is fixed to `https://benamuwo.me/schrodingers_civ/` (no `www`): `ORIGIN` in `scripts/build.mjs`, asserted by `scripts/check.mjs`. The `www` host serves the same pages.
 
 Change chapter focal points in `src/content/chapters.json` (`focal`, e.g. `65% 40%`). To replace an image, retain its public filename under `src/assets/art/`, update its dimensions and provenance in the chapter/source manifests, then build and inspect that chapter on mobile and desktop. Current source images are only 357–486 pixels wide. All 23 are integrated, but full-resolution masters would improve the large-screen experience. Do not upscale them and describe the result as recovered detail.
 
