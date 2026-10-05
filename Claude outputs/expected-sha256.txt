@@ -1,0 +1,4 @@
+66f894d9a65c9dd16e28679468c8fb17b5597860b8610907fa46b580d9dcb1e8  scripts/build.mjs
+068445fb4c0371f6cea152c5e6c429aa6359bc8d8841b607f39f70c0d6558cba  docs/FINDABILITY.md
+a2b3a73245d3499c8717db3aafd2c8f7828ca991013acff39911c709df1f35f5  docs/findability/urls-tale-locales.txt
+f35ffc9b428f5ad07943187975436b76880ab1b8651ab1b8228efa97995b8de9  src/content/tale-locales.json

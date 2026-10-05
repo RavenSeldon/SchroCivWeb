@@ -140,44 +140,61 @@ Each page shows the phrase to readers at most once.
 - `audit/` and `audit/paper/` share one title.
 - The JSON-LD names the author "Ben Amuwo" on the WebSite, Book, Chapter and Atlas-paper entries, and "Benjamin Amuwo" on the Audit-paper entry. The visible site footer and `LICENSE-CONTENT.md` both use "Benjamin Amuwo".
 
-## 8. Localized Tale Pages (Off by Default)
+## 8. Localized Tale Pages (On)
 
-`scripts/build.mjs` can generate eight localized landing pages for the Tale, at `tale/<code>/`. They are cross-linked with `hreflang` and listed in the sitemap. The switch is `TALE_LOCALES_ENABLED`, and it ships as `false`. With it off, the build output is byte-identical to a build without this feature.
+`scripts/build.mjs` generates eight localized landing pages for the Tale at `tale/<code>/`. The switch is `TALE_LOCALES_ENABLED`; it shipped as `false` in commit `e57918e` and was set to `true` on 2026-10-05 at the author's instruction. With it off, the build output is identical to a build without the feature, file for file.
 
-**Languages:** Français (`fr`), Español (`es`), Português (`pt`), Deutsch (`de`), Русский (`ru`), 日本語 (`ja`), 한국어 (`ko`), 简体中文 (`zh-Hans`). They were chosen as widely used web languages in which "Schrödinger's cat" is a common phrase. Russian and Korean also pair with IndexNow participants Yandex and Naver. This is a judgment call: the list is data in `src/content/tale-locales.json` and can be changed there.
+**Languages:** Français (`fr`), Español (`es`), Português (`pt`), Deutsch (`de`), Русский (`ru`), 日本語 (`ja`), 한국어 (`ko`), 简体中文 (`zh-Hans`). They were chosen as widely used web languages in which "Schrödinger's cat" is a common phrase. Russian and Korean also pair with the IndexNow participants Yandex and Naver. The list is data in `src/content/tale-locales.json` and can be changed there.
 
 **What each page contains,** all in its own language:
 
-- a title and description
-- a heading and short summary drawn from the site's own English wording: what the Tale is, what the Atlas studied, the Prologue's reading key, and the English title's pun
+- a distinct `<title>` and description
+- a translated heading and lede
+- six paragraphs of summary drawn from the site's own English material: what the Tale is, what the Atlas audited and what it found, what the Minded-Language Audit examines, the Prologue's reading key, the English title's pun, and a statement that the chapters themselves are in English
 - links to the English Prologue, the English chapter index and the project home
-- links to the other language versions
+- a row of links to the other language versions
 
-The chapters themselves are not translated. The site navigation and footer stay in English. When the switch is on, the English Tale index gains matching `hreflang` links and an "About this tale in other languages" row.
+The chapters are not translated. The site navigation and footer stay in English. The English Tale index gains matching `hreflang` links and an "About this tale in other languages" row; nothing else on it changes.
 
-### Why It Ships Off
+### Why These Are Localized Pages and Not Doorway Pages
 
-1. **The translations are unreviewed drafts.** An AI (Claude) wrote them, and no native speaker has checked them. `tale-locales.json` records this as `"status": "draft-unreviewed"`, and the build prints a warning if the pages are published in that state. The Tale's English pun (*tale*/*tail*) does not survive translation, so each page explains it rather than reproducing it.
-2. **The pages sit near Google's doorway-abuse examples.** Google's spam policies list "Generating pages to funnel visitors into the actual usable or relevant portion of a site" as doorway abuse. Scaled content abuse includes generating many pages "through automated transformations like... translating." ([Spam policies](https://developers.google.com/search/docs/essentials/spam-policies)) These pages add a real summary in each language, but their main job is to send readers to English chapters. A violation can affect how the whole host ranks, and the Neurascape blog shares this host.
-3. **The pages are short.** Their main content runs from roughly 90 to 190 word tokens, a crude count that undercounts Japanese and Chinese.
-4. **Google judges language by visible text.** Google says it "uses the visible content of your page to determine its language" and does not use `lang` attributes. Each page carries English proper names (Claim Transmission Atlas, Schrödinger's Civilization) and English navigation, so detection is likely to succeed but is not certain. ([Managing multilingual sites](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites))
-5. **Translated titles were not checked for collisions.** "The Translator's Tale" collides in English (§2), and the same may be true in other languages.
+Google's spam policies name doorway abuse as "Generating pages to funnel visitors into the actual usable or relevant portion of a site," and scaled content abuse as generating many pages "through automated transformations like… translating." ([Spam policies](https://developers.google.com/search/docs/essentials/spam-policies)) Classification is Google's decision, not ours. These are the design choices made against it:
 
-### To Switch It On
+| Decision | Reason |
+| --- | --- |
+| One page per language, not one per chapter | 8 new pages, not 184. Nothing here is generated at scale. |
+| Substantive, language-specific summaries | 560–1,186 characters of main content per page, excluding whitespace, each saying something a reader could not get from the English page without reading English. |
+| No machine-translated chapters | The 23 chapters stay English-only. No page is a translated duplicate of another page. |
+| Reciprocal `hreflang` plus `x-default` | This is Google's documented signal for "localized version," the opposite of an unrelated doorway. ([Localized versions](https://developers.google.com/search/docs/specialty/international/localized-versions)) |
+| Self-referencing canonicals | Each page claims only itself. None tries to inherit the English page's signals. |
+| A visible language row on every Tale page | Readers can move between versions by hand. |
+| No automatic redirects or IP/`Accept-Language` sniffing | Google asks that users and crawlers not be redirected by inferred language. |
+| Structured data that matches what is visible | Each page carries one `WebPage` entity: its own name, description, URL and `inLanguage`, `isPartOf` the site, `about` the English Book. |
+| Honest framing in the text | Each page says, in its own language, that the chapters and papers are in English. |
 
-1. Have a native or fluent speaker review each locale in `src/content/tale-locales.json`. Then set its `"status"` to `"reviewed"`, or remove the locales that were not reviewed.
-2. Set `const TALE_LOCALES_ENABLED=true;` in `scripts/build.mjs`.
-3. Run `node scripts/build.mjs && npm run check`. The build should report 39 routes, and the check must pass.
-4. Deploy per `DEPLOY.md` §A. Then add [`findability/urls-tale-locales.txt`](findability/urls-tale-locales.txt) to the URL list for Search Console or IndexNow.
+### Known Weaknesses
 
-### Verified When Introduced (2026-09-17)
+1. **No native speaker has read these pages.** Claude (an AI) wrote them from the site's English wording. They were then checked twice by other model instances given the eight locales cold, with no sight of the English, and asked to back-translate literally and flag defects. Those passes found real errors — a German subtitle that read "barely making it to the stars", a subjectless Portuguese verb, a Chinese gloss that said "humankind" where it meant "the human", and five languages naming the downloadable papers as five different categories — and 23 corrections were applied on 2026-10-05. The record is in [`findability/tale-locales-backtranslation.md`](findability/tale-locales-backtranslation.md). A machine checking a machine is not a native reader: `tale-locales.json` keeps `"status": "draft-unreviewed"`, and the build prints a warning on every run while it does. Set it to `"reviewed"` only after a person who speaks the language has read the page.
+2. **Google judges language by visible text.** Google says it "uses the visible content of your page to determine its language" and does not use `lang` attributes. Each page carries English proper names and English navigation, so detection is likely but not certain. ([Managing multilingual sites](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites))
+3. **Translated titles were not checked for collisions.** "The Translator's Tale" collides in English (§2); the same may be true in other languages.
+4. **The Japanese and Chinese pages are the shortest** at 811 and 677 characters of main content.
+5. **The pun does not survive translation.** Each page explains *tale*/*tail* rather than reproducing it.
 
-- **Off:** the build output is identical to the previous build, file for file.
-- **On:** the build reports 39 routes and the check passes (one heading per page, all local links resolve).
-- **`hreflang`:** each of the 9 Tale pages lists the same 10 `hreflang` entries (English, 8 locales, `x-default`). Each page lists itself, which Google requires ("Each language version must list itself as well as all other language versions"), uses fully-qualified URLs, and has a self-referencing canonical. ([Localized versions](https://developers.google.com/search/docs/specialty/international/localized-versions))
-- **Language attribute:** `<html lang>` matches each page's `hreflang` code.
-- **English Tale index:** only the `hreflang` links and the language row were added.
-- **Sitemap:** it parses as XML and lists 43 URLs.
-- **Rendering:** French (375 px) and Japanese (1280 px) pages rendered without horizontal overflow or console errors, and the CJK glyphs rendered with system fonts. The site's own font stack has no CJK font, so readers' devices will supply one.
+### To Switch Off
 
-**Not established:** that any of these pages will be indexed or ranked, or that the translations are accurate enough to publish.
+Set `const TALE_LOCALES_ENABLED=false;` in `scripts/build.mjs`, rebuild and redeploy. The eight URLs then 404 and leave the sitemap. Do this only if they have not been indexed; removing indexed pages is worse than never publishing them.
+
+### Verified 2026-10-05, on a clean build of `e57918e` plus this change
+
+- **Build and check:** `node scripts/build.mjs` reports 39 routes; `node scripts/check.mjs` passes (one `h1` per page, 2,134 local links resolve, asset hashes match).
+- **Diff against the locales-off build:** the only changes are the 8 new pages, `routes.json`, `sitemap.xml`, and the English Tale index, which gains the `hreflang` links and the language row and nothing else.
+- **`hreflang`:** each of the 9 Tale pages lists the same 10 entries (English, 8 locales, `x-default`), fully qualified, each listing itself, with a self-referencing canonical.
+- **`<html lang>`** matches each page's `hreflang` code; each page carries `og:locale` plus 8 `og:locale:alternate`.
+- **Distinctness:** the highest word overlap between any two localized pages is 45 %, between Spanish and Portuguese, which is cognate vocabulary in two closely related languages. No page is a translation of another page in the set.
+- **Main content:** 560–1,186 characters per page, excluding whitespace.
+- **Structured data:** each localized page carries one `WebPage` entity giving its own name, description, URL and `inLanguage`, `isPartOf` the site and `about` the English Book. Every field describes something visible on the page.
+- **French typography:** narrow no-break spaces (U+202F) before `:`, `%` and inside `« »`, 10 occurrences in the main content, no stray punctuation at line start.
+- **Rendering:** French at 375 px and Japanese at 1280 px, no horizontal overflow, no console errors. CJK glyphs come from the reader's system fonts; the site's stack has none.
+- **Sitemap:** parses as XML, 43 URLs, all 8 localized pages present.
+
+**Not established:** that any of these pages will be indexed or ranked, that Google will classify them as intended, or that the translations are accurate enough to publish. The back-translations supplied with this change are the author's means of checking the second point.
